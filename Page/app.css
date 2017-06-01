@@ -210,7 +210,7 @@ hr {
 
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 footer {
-	background-color:#232b2b;
+	background-color:#BF3F3F;
 	min-height:350px;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -271,7 +271,7 @@ footer {
 
  .copyright {
 	 min-height:40px;
-	 background-color: #171717;
+	 background-color:#8A2C2C;
  }
 
  .copyright p {
