@@ -21,6 +21,7 @@ html {
 }
 
 .left-h2 {
+	text-align: left;
 	padding-left: 15px;
 	padding-bottom: 10px;
 }
@@ -41,14 +42,11 @@ h1 {
 
 h2 {
 	font-family: 'Hind', sans-serif;
-
+	text-align: center;
 	font-size: 60px;
 	color: #ed4146;
 }
 
-h2.center {
-	text-align: center;
-}
 
 h3 {
 	font-family: 'Hind', sans-serif;
@@ -110,3 +108,16 @@ hr {
 	 padding-top: 10px;
 	 text-align: left;
  }
+
+ @media (min-width: 979px) {
+               ul.nav li.dropdown:hover > ul.dropdown-menu {
+                     display: block;
+                     margin-top:0px;
+ }
+ }
+
+ .form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
