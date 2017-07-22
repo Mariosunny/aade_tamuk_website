@@ -1,0 +1,26 @@
+from django.views.generic import TemplateView, FormView
+from django.core.urlresolvers import reverse_lazy
+from django.template.response import TemplateResponse
+from django.http import HttpResponse
+from django.shortcuts import render
+import re
+
+import quest_builder.objects.items as _items
+
+
+class WebsiteView(TemplateView):
+
+    pass
+
+
+class Home(WebsiteView):
+
+    template_name = 'home.html'
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
