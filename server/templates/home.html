@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
 {% block body %}
-This is the home page
+{% for newspost in newsposts %}
+	<h2>{{ newspost.title }}</h2>
+	<br/>
+	{{ newspost.content }}
+	<br/>
+	{{ newspost.date }}
+{% endfor %}
 {% endblock body %}
