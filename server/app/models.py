@@ -15,3 +15,11 @@ class RegisteredMember(models.Model):
 	email = models.EmailField()
 	phone_number = models.CharField(max_length=16)
 	tshirt_size = models.IntegerField()
+
+
+class Officer(models.Model):
+
+	name = models.CharField(max_length=128)
+	year = models.IntegerField()
+	position = models.IntegerField()
+	picture = models.ImageField()
