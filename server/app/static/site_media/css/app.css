@@ -3,13 +3,67 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-/*Just used to make sure there is space before the footer.*/
-.page-content {
-		padding-bottom: 50px;
-}
-
 html {
 	height: 100% ;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 40px;
+}
+
+h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	font-size: 60px;
+}
+
+h3 {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-bottom: 5px;
+	color: #ed4146;
+	font-size: 40px;
+	text-align: center;
+}
+
+h4 {
+	font-family: 'Bitter', serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+ul {
+	font-family: 'Bitter', serif;
+	font-size: 15px;
+}
+
+p {
+	font-family: 'Bitter', serif;
+	font-size: 18px;
+}
+
+a {
+	color: #ed4146;
+}
+
+hr {
+	border: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+img .post-image {
+	max-width: 600px;
+	height: 400px;
 }
 
 .section {
@@ -30,35 +84,6 @@ html {
 				 0px 18px 23px rgba(0,0,0,0.1);
 }
 
-h1 {
-	font-weight: 700;
-	font-size: 40px;
-}
-
-
-h2 {
-	font-family: 'Hind', sans-serif;
-	text-align: center;
-	font-size: 60px;
-	color: #ed4146;
-}
-
-
-h3 {
-	font-family: 'Hind', sans-serif;
-
-	padding-top: 25px;
-	padding-bottom: 10px;
-	color: #ed4146;
-	font-size: 40px;
-	text-align: center;
-}
-
-p {
-	font-family: 'Bitter', serif;
-	font-size: 18px;
-}
-
 .center {
 		width: 800px;
 		margin:0 auto;
@@ -75,26 +100,6 @@ p {
 	text-align: center;
 }
 
-h4 {
-	font-family: 'Bitter', serif;
-	font-size: 16px;
-	font-weight: bold;
-	text-align: center;
-}
-
-img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-img .post-image {
-	max-width: 600px;
-	height: 400px;
-}
-
 .logo {
 	padding-top: 10px;
 	padding-bottom: 50px;
@@ -103,16 +108,6 @@ img .post-image {
 .medium-image {
 	max-width: 640px;
 	height: 480px;
-}
-
-a {
-	color: #ed4146;
-}
-
-hr {
-	border: 0;
-  border-top: 1px solid black;
-  border-bottom: 1px solid #ed4146;
 }
 
  .row .post {
@@ -125,6 +120,11 @@ hr {
  .time-stamp {
 	 padding-top: 10px;
 	 text-align: left;
+ }
+
+ /*Just used to make sure there is space before the footer.*/
+ .page-content {
+ 		padding-bottom: 75px;
  }
 
  @media (min-width: 979px) {
