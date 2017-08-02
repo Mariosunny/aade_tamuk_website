@@ -39,6 +39,15 @@ class AadeTamuk(WebsiteView):
 
         return context;
 
+class AadeCentralTexas(WebsiteView):
+
+    template_name = 'aade_central_texas.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        return context;
+
 class Donations(WebsiteView):
 
     template_name = 'donations.html'
