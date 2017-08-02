@@ -2,10 +2,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 
 from . import views
 
 urlpatterns = [
+	url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', views.Home.as_view(), name='home'),
 	url(r'^partners/', views.Partners.as_view(), name= 'partners'),
 	url(r'^aade_tamuk/', views.AadeTamuk.as_view(), name= 'aade_tamuk'),
