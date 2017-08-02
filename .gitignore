@@ -1,2 +1,2 @@
-*.pyc
+server/app/__pycache__/*.pyc
 *.sqlite3
