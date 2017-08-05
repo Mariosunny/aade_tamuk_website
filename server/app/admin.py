@@ -1,7 +1,7 @@
 from django.contrib import admin
-from app.models import NewPost, RegisteredMember, Officer
+from app.models import NewsPost, RegisteredMember, Officer
 
-class NewPostAdmin(admin.ModelAdmin):
+class NewsPostAdmin(admin.ModelAdmin):
 
     pass
 
@@ -16,6 +16,6 @@ class OfficerAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(NewPost, NewPostAdmin)
+admin.site.register(NewsPost, NewsPostAdmin)
 admin.site.register(RegisteredMember, RegisteredMemberAdmin)
 admin.site.register(Officer, OfficerAdmin)
