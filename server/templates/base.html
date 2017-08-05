@@ -100,12 +100,11 @@
       </div>
       <div class="col-md-6">
         <ul class="bottom_footer_ul">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Leadership</a></li>
-          <li><a href="#">Partners</a></li>
-          <li><a href="#">Admin Login</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about_us' %}">About Us</a></li>
+          <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+          <li><a href="{% url 'partners' %}">Partners</a></li>
+          <li><a href="{% url 'admin_login' %}">{% if is_logged_in %}Logged in as Admin{% else %}Admin Login{% endif %}</a></li>
         </ul>
       </div>
     </div>
