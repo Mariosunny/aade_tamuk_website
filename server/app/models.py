@@ -5,7 +5,7 @@ class NewsPost(models.Model):
 
 	title = models.CharField(max_length=128)
 	content = models.TextField()
-	date = models.DateTimeField()
+	date = models.DateTimeField(auto_now_add=True)
 	category = models.IntegerField()
 
 

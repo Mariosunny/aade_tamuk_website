@@ -23,49 +23,23 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">AADE</a>
 			</div>
 			<div class="collapse navbar-collapse" id="appnav">
 				<ul class="nav navbar-nav ">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'about_us' %}">About Us</a></li>
+					<li><a href="{% url 'news' %}">News</a></li>
+					<li><a href="{% url 'events' %}">Events</a></li>
 					<li class="dropdown">
-	          <a tabindex="-1" href="#">Organization</a>
-	          <ul class="dropdown-menu">
-	            <li class="dropdown-submenu">
-	              <a href="#">About Us</a>
-	              <ul class="dropdown-menu">
-	                <li><a href="#">AADE TAMUK</a></li>
-	              	<li><a href="#">AADE CENTRAL TEXAS CHAPTER</a></li>
-	              </ul>
-	            </li>
-							<li class="dropdown-submenu">
-	              <a href="#">Board</a>
-	              <ul class="dropdown-menu">
-	                <li><a href="#">2016-2017</a></li>
-	              </ul>
-	            </li>
-	            <li><a href="#">Calendar</a></li>
-							<li class="dropdown-submenu">
-								<a href="#">Learn More</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Texas A&M University - Kingsville</a></li>
-									<li><a href="#">American Association Of Drilling Engineers</a></li>
-								</ul>
-							</li>
-						</ul>
-	        </li>
-					<li class="dropdown">
-	          <a tabindex="-1" href="#">Gallery</a>
-	          <ul class="dropdown-menu">
+		          		<a tabindex="-1" href="#">Gallery</a>
+						<ul class="dropdown-menu">
 							<li><a href="#">General Meetings</a></li>
 							<li><a href="#">Field Trips</a></li>
 							<li><a href="#">Training</a></li>
 							<li><a href="#">Social</a></li>
 						</ul>
-					<li> <a href="#">Donations</a></li>
-					<li> <a href="#">Partners</a></li>
-					<li> <a href="#">Contact Us</a></li>
-					<li> <a href="#">Store</a></li>
-					<li> <a href="#">2017-2018</a></li>
+					</li>
+					<li><a href="{% url 'donate' %}">Donate</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><i class="fa fa-user-plus"></i>Join Us</a></li>
@@ -96,7 +70,7 @@
 <div class="copyright">
     <div class="container">
       <div class="col-md-6">
-        <p>© 2017 - AADE TAMUK</p>
+        <p>© 2017 American Association of Drilling Engineers at Texas A&M University-Kingsville</p>
       </div>
       <div class="col-md-6">
         <ul class="bottom_footer_ul">
@@ -104,7 +78,7 @@
           <li><a href="{% url 'about_us' %}">About Us</a></li>
           <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
           <li><a href="{% url 'partners' %}">Partners</a></li>
-          <li><a href="{% url 'admin_login' %}">{% if is_logged_in %}Logged in as Admin{% else %}Admin Login{% endif %}</a></li>
+          <li>{% if is_logged_in %}Logged in as Admin{% else %}<a href="{% url 'admin_login' %}">Admin Login</a>{% endif %}</li>
         </ul>
       </div>
     </div>
