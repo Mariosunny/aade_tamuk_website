@@ -23,3 +23,10 @@ class Officer(models.Model):
 	year = models.IntegerField()
 	position = models.IntegerField()
 	picture = models.ImageField()
+
+
+class Event(models.Model):
+
+	title = models.CharField(max_length=128)
+	details = models.TextField()
+	date = models.DateTimeField()
