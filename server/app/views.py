@@ -16,7 +16,7 @@ class Home(WebsiteView):
         context = super().get_context_data(**kwargs)
 
         context.update({
-            "newsposts": models.NewPost.objects.all()
+            "newsposts": models.NewsPost.objects.all()
         })
 
         return context
@@ -30,7 +30,7 @@ class Partners(WebsiteView):
 
         return context;
 
-class AadeTamuk(WebsiteView):
+class AboutUs(WebsiteView):
 
     template_name = 'aade_tamuk.html'
 
