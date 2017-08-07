@@ -13,10 +13,10 @@
               {% for newspost in newsposts %}
 
               	<div class="news">
-	              	<div class="news-title"><a href="{% url 'news' %}">{{newspost.title}}</a></div>
+	              	<div class="news-title"><a href="{% url 'newspost' newspost.pk %}">{{newspost.title}}</a></div>
 	              	<div class="news-date">{{newspost.date|date:"M d Y"}}</div>
 	              	<div class="news-content">{{newspost.content|linebreaks}}</div>
-	              	{% if newspost.read_more %}<p class=""><a href="{% url 'news' %}">Read more...</a></p>{% endif %}
+	              	{% if newspost.read_more %}<p class=""><a href="{% url 'newspost' newspost.pk %}">Read more...</a></p>{% endif %}
               	</div>
               {% endfor %}
             </div>

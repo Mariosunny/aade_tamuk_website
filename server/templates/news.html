@@ -8,11 +8,11 @@
 				  <div class="col-lg-2"></div>
           <div class="col-lg-8">
             <div class="row section center">
-              <h2>News</h2>
+              <h2 id="selected" data-selected="{{selected}}">News</h2>
               {% for newspost in newsposts %}
 
                 <div class="news" name="{{newspost.pk}}">
-                  <div class="news-title"><a href="{% url 'news' %}">{{newspost.title}}</a></div>
+                  <div class="news-title">{{newspost.title}}</div>
                   <div class="news-date">{{newspost.date|date:"M d Y"}}</div>
                   <div class="news-content">{{newspost.content|linebreaks}}</div>
                 </div>
@@ -23,4 +23,12 @@
       </div>
     </div>
   </div>
+<script>
+var selected = document.getElementById("selected").dataset.selected;
+
+if(selected != '-1') {
+
+  location.href = "#" + selected;
+}
+</script>
 {% endblock %}
