@@ -112,6 +112,17 @@ class News(WebsiteView):
     template_name = 'news.html'
 
     def get_context_data(self, **kwargs):
+
         context = super().get_context_data(**kwargs)
+
+        newsposts = models.NewsPost.objects.all().order_by("-date")
+
+        context.update({
+            "newsposts": [{
+                "title": newspost.title,
+                "date": newspost.date,
+                "content": newspost.content,
+            } for newspost in newsposts]
+        })
 
         return context;

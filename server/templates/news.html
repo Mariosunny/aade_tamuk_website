@@ -9,13 +9,14 @@
           <div class="col-lg-8">
             <div class="row section center">
               <h2>News</h2>
-              <hr>
-              </br>
-              <p class = "centered-paragraph"> Interested in supporting AADE? </br>
-                Consider donating. </br>
-                Your donations are valuable to us.
-              </p>
-              <p> Paypal Link </p>
+              {% for newspost in newsposts %}
+
+                <div class="news" name="{{newspost.pk}}">
+                  <div class="news-title"><a href="{% url 'news' %}">{{newspost.title}}</a></div>
+                  <div class="news-date">{{newspost.date|date:"M d Y"}}</div>
+                  <div class="news-content">{{newspost.content|linebreaks}}</div>
+                </div>
+              {% endfor %}
             </div>
           </div>
         </div>
