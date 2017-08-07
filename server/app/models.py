@@ -30,3 +30,16 @@ class Event(models.Model):
 	title = models.CharField(max_length=128)
 	details = models.TextField()
 	date = models.DateTimeField()
+
+
+class Album(models.Model):
+
+	number = models.IntegerField()
+	description = models.TextField()
+
+
+class Picture(models.Model):
+
+	album = models.ForeignKey("Album")
+	image = models.ImageField()
+	caption = models.TextField()
