@@ -27,6 +27,7 @@ class Home(WebsiteView):
                 "date": newspost.date,
                 "content": newspost.content[:500] + "..." if len(newspost.content) > 500 else newspost.content,
                 "read_more": len(newspost.content) > 500,
+                "pk": newspost.pk,
             } for newspost in newsposts]
         })
 
@@ -112,6 +113,21 @@ class News(WebsiteView):
     template_name = 'news.html'
 
     def get_context_data(self, **kwargs):
+
         context = super().get_context_data(**kwargs)
+
+        newsposts = models.NewsPost.objects.all().order_by("-date")
+
+        print(self.kwargs)
+
+        context.update({
+            "newsposts": [{
+                "title": newspost.title,
+                "date": newspost.date,
+                "content": newspost.content,
+                "pk": newspost.pk,
+                "selected": self.kwargs['selected'] if 'selected' in self.kwargs else -1
+            } for newspost in newsposts]
+        })
 
         return context;

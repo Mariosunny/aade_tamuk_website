@@ -17,4 +17,5 @@ urlpatterns = [
 	url(r'^admin_login/', views.AdminLogin.as_view(), name= 'admin_login'),
 	url(r'^events/', views.Events.as_view(), name= 'events'),
 	url(r'^news/', views.News.as_view(), name= 'news'),
+	url(r'^news/(?P<selected>\d+)/', views.News.as_view(), name= 'newspost'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
