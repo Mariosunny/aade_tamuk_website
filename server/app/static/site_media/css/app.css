@@ -37,7 +37,7 @@ h4 {
 	margin-bottom: 75px;
 }
 
-.news-title {
+.news-title a {
 	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
@@ -57,6 +57,7 @@ h4 {
 .news-date {
 	color: #888888;
 	margin-bottom: 3px;
+	padding-bottom: 10px;
 }
 
 .news-content p{
