@@ -33,6 +33,37 @@ h4 {
 	text-align: center;
 }
 
+.news {
+	margin-bottom: 75px;
+}
+
+.news-title {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-bottom: 5px;
+	color: #ed4146;
+	font-size: 34px;
+	padding: 0px;
+}
+
+.nav a:hover {
+	color: #ffbbbb !important;
+}
+
+.news-title a:hover {
+	color: #d2141a;
+	text-decoration: none;
+}
+
+.news-date {
+	color: #888888;
+	margin-bottom: 3px;
+}
+
+.news-content p{
+	font-weight: normal;
+	font-size: 16px;
+}
+
 ul {
 	font-family: 'Bitter', serif;
 	font-size: 15px;

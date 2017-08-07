@@ -1,11 +1,28 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block body %}
-{% for newspost in newsposts %}
-	<h2>{{ newspost.title }}</h2>
-	<br/>
-	{{ newspost.content }}
-	<br/>
-	{{ newspost.date }}
-{% endfor %}
-{% endblock body %}
+{% block content %}
+  <div class="container page-content">
+  	<div class="row">
+		    <div class="container">
+          <div class="row section">
+				  <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <div class="row section">
+              <a href="{% url 'home' %}"><img src="{% static 'site_media\images\logo_large.png' %}" width="500px;" style="display: block;margin: auto;"/></a>
+              {% for newspost in newsposts %}
+
+              	<div class="news">
+	              	<div class="news-title"><a href="{% url 'news' %}">{{newspost.title}}</a></div>
+	              	<div class="news-date">{{newspost.date|date:"M d Y"}}</div>
+	              	<div class="news-content">{{newspost.content|linebreaks}}</div>
+	              	{% if newspost.read_more %}<p class=""><a href="{% url 'news' %}">Read more...</a></p>{% endif %}
+              	</div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

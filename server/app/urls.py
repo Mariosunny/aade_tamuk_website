@@ -10,9 +10,11 @@ urlpatterns = [
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^$', views.Home.as_view(), name='home'),
 	url(r'^partners/', views.Partners.as_view(), name= 'partners'),
-	url(r'^aade_tamuk/', views.AadeTamuk.as_view(), name= 'aade_tamuk'),
-	url(r'^aade_central_texas/', views.AadeCentralTexas.as_view(), name= 'aade_central_texas'),
-	url(r'^donations/', views.Donations.as_view(), name= 'donations'),
-	url(r'^officers/', views.Officers.as_view(), name= 'officers'),
-	url(r'^contact_us/', views.ContactUs.as_view(), name= 'contact_us')
+	url(r'^about_us/', views.AboutUs.as_view(), name= 'about_us'),
+	url(r'^donate/', views.Donations.as_view(), name= 'donate'),
+	url(r'^leadership/', views.Leadership.as_view(), name= 'leadership'),
+	url(r'^contact_us/', views.ContactUs.as_view(), name= 'contact_us'),
+	url(r'^admin_login/', views.AdminLogin.as_view(), name= 'admin_login'),
+	url(r'^events/', views.Events.as_view(), name= 'events'),
+	url(r'^news/', views.News.as_view(), name= 'news'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

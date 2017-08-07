@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class NewPost(models.Model):
+class NewsPost(models.Model):
 
 	title = models.CharField(max_length=128)
 	content = models.TextField()
-	date = models.DateTimeField()
+	date = models.DateTimeField(auto_now_add=True)
 	category = models.IntegerField()
 
 
@@ -15,3 +15,18 @@ class RegisteredMember(models.Model):
 	email = models.EmailField()
 	phone_number = models.CharField(max_length=16)
 	tshirt_size = models.IntegerField()
+
+
+class Officer(models.Model):
+
+	name = models.CharField(max_length=128)
+	year = models.IntegerField()
+	position = models.IntegerField()
+	picture = models.ImageField()
+
+
+class Event(models.Model):
+
+	title = models.CharField(max_length=128)
+	details = models.TextField()
+	date = models.DateTimeField()
