@@ -41,5 +41,5 @@ class Album(models.Model):
 class Picture(models.Model):
 
 	album = models.ForeignKey("Album")
-	image = models.ImageField()
+	image = models.ImageField(upload_to='uploads/')
 	caption = models.TextField()
