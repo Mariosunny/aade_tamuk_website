@@ -4,7 +4,11 @@ from . import models
 
 class WebsiteView(TemplateView):
 
-    pass
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+
+        return context
 
 
 class Home(WebsiteView):
@@ -30,6 +34,30 @@ class Home(WebsiteView):
                 "pk": newspost.pk,
             } for newspost in newsposts]
         })
+
+        events = []
+
+        for event in models.Event.objects.all().order_by("-date"):
+
+            e = {
+                "title": event.title,
+                "date": event.date,
+                "details": event.details[:250] + "..." if len(event.details) > 250 else event.details,
+                "pk": event.pk,
+                "read_more": len(event.details) > 250,
+            }
+
+            if event.location:
+
+                e.update({
+                    "location": event.location,
+                    })
+
+            events.append(e)
+
+        context.update({
+            "events": events,
+            })
 
         return context
 
@@ -103,7 +131,31 @@ class Events(WebsiteView):
     template_name = 'events.html'
 
     def get_context_data(self, **kwargs):
+
         context = super().get_context_data(**kwargs)
+
+        events = []
+
+        for event in models.Event.objects.all().order_by("-date"):
+
+            e = {
+                "title": event.title,
+                "date": event.date,
+                "details": event.details,
+                "pk": event.pk,
+            }
+
+            if event.location:
+
+                e.update({
+                    "location": event.location,
+                    })
+
+            events.append(e)
+
+        context.update({
+            "events": events,
+            })
 
         return context;
 
@@ -117,8 +169,6 @@ class News(WebsiteView):
         context = super().get_context_data(**kwargs)
 
         newsposts = models.NewsPost.objects.all().order_by("-date")
-
-        print(self.kwargs)
 
         context.update({
             "newsposts": [{

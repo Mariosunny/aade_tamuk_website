@@ -64,6 +64,51 @@ h4 {
 	font-size: 16px;
 }
 
+.news {
+	margin-bottom: 75px;
+	text-align: left;
+}
+
+.event {
+	text-align: left;
+}
+
+.event-title {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-bottom: 5px;
+	color: #ed4146;
+	font-size: 34px;
+	padding: 0px;
+}
+
+.event-title-sub {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-bottom: 5px;
+	color: #ed4146;
+	font-size: 24px;
+	padding: 0px;
+}
+
+.event-title-sub a:hover {
+	color: #d2141a;
+	text-decoration: none;
+}
+
+.event-date {
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.event-location {
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.event-details p{
+	font-weight: normal;
+	font-size: 16px;
+}
+
 ul {
 	font-family: 'Bitter', serif;
 	font-size: 15px;
