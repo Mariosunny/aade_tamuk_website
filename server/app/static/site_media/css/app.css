@@ -215,3 +215,8 @@ img .post-image {
     background-color: transparent;
     text-align: center;
 }
+
+.form-error {
+	color: red;
+	font-size: 14px;
+}

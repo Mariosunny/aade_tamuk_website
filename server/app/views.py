@@ -1,6 +1,12 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
+from django.core.urlresolvers import reverse
+from django.contrib.auth import logout, login, authenticate
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
 
 from . import models
+from . import forms
 
 class WebsiteView(TemplateView):
 
@@ -116,16 +122,6 @@ class Leadership(WebsiteView):
         return context;
 
 
-class AdminLogin(WebsiteView):
-
-    template_name = 'admin_login.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        return context;
-
-
 class Events(WebsiteView):
 
     template_name = 'events.html'
@@ -181,3 +177,25 @@ class News(WebsiteView):
         })
 
         return context;
+
+
+def admin_login(request):
+
+    form = forms.AdminLoginForm()
+
+    if request.method == 'POST':
+
+        form = forms.AdminLoginForm(request.POST)
+
+        if form.is_valid():
+
+            login(request, authenticate(username="admin",password=form.get_password()))
+            return HttpResponseRedirect('/')
+
+    return render(request, 'admin_login.html', {"form": form})
+
+
+def admin_logout(request):
+
+    logout(request)
+    return HttpResponseRedirect('/')
