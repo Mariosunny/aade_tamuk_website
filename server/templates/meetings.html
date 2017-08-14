@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block javascript %}
+{% endblock %}
+
+{% block content %}
+<script  type='text/javascript' src="http://code.jquery.com/jquery-3.1.1.js"></script>
+
+<div class="container page-content">
+  <div class="row">
+      <div class="container">
+        <div class="row section">
+          <h2> Meetings <h2>
+          <select id="selector">
+            {% for album in albums  %}
+              <option value="{{ album.name }}"> {{ album.name }} </option>
+            {% endfor %}
+          </select>
+          <div id="content">
+          </div>
+          <script type='text/javascript'>
+            $(document).ready(function(){
+              $('#content').load("pictures/?album=" + $('#selector').val());
+            });
+          </script>
+          <script type='text/javascript'>
+            $(document).ready(function(){
+              $('#selector').on('change', function(e) {
+                $('#content').load("pictures/?album=" + this.value);
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

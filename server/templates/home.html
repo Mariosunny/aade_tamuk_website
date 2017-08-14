@@ -10,7 +10,6 @@
           <div class="col-lg-7">
             <div class="row section">
               {% for newspost in newsposts %}
-
               	<div class="news">
 	              	<div class="news-title"><a href="{% url 'newspost' newspost.pk %}">{{newspost.title}}</a></div>
 	              	<div class="news-date">{{newspost.date|date:"M d Y"}}</div>

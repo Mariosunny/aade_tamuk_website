@@ -33,11 +33,20 @@ h4 {
 	text-align: center;
 }
 
+select {
+	font-size: 16px;
+	width: 200px
+}
+
+div #content {
+	padding-top: 0;
+}
+
 .news {
 	margin-bottom: 75px;
 }
 
-.news-title {
+.news-title a {
 	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
@@ -57,6 +66,7 @@ h4 {
 .news-date {
 	color: #888888;
 	margin-bottom: 3px;
+	padding-bottom: 10px;
 }
 
 .news-content p{
@@ -215,6 +225,8 @@ img .post-image {
     background-color: transparent;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
 
 .form-error {
 	color: red;
@@ -253,3 +265,4 @@ form input[type="submit"] {
 	color: #00004d;
 	text-decoration: none;
 }
+>>>>>>> upstream/master
