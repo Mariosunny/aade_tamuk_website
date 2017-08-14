@@ -178,7 +178,6 @@ class News(WebsiteView):
 
         return context;
 
-<<<<<<< HEAD
 class MeetingsGallery(WebsiteView):
     template_name = 'meetings.html'
 
@@ -216,7 +215,6 @@ class Album(WebsiteView):
         })
 
         return context
-=======
 
 def admin_login(request):
 
@@ -264,4 +262,3 @@ def delete_newspost(request, pk):
 
     models.NewsPost.objects.get(pk=pk).delete()
     return HttpResponseRedirect('/news')
->>>>>>> upstream/master

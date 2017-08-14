@@ -1,9 +1,8 @@
 from django import forms
-<<<<<<< HEAD
 
 class MeetingGalleryForm(forms.Form):
     pictures = forms.ModelChoiceField(queryset=Pictures.object.filter(category=1).order_by('name'))
-=======
+
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
@@ -51,4 +50,3 @@ class CreateNewspostForm(forms.Form):
     def get_content(self):
 
     	return self.cleaned_data.get('content')
->>>>>>> upstream/master
