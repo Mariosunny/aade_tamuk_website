@@ -232,8 +232,11 @@ form label {
 }
 
 form input[type="text"],textarea {
-	margin-bottom: 10px;
 	width: 100%;
+}
+
+form input, textarea {
+	margin-bottom: 10px;
 }
 
 form input[type="submit"] {
