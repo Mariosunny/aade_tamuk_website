@@ -199,3 +199,29 @@ def admin_logout(request):
 
     logout(request)
     return HttpResponseRedirect('/')
+
+
+def create_newspost(request):
+
+    form = forms.CreateNewspostForm()
+
+    if request.method == 'POST':
+
+        form = forms.CreateNewspostForm(request.POST)
+
+        if form.is_valid():
+
+            models.NewsPost.objects.create(
+                title=form.get_title(),
+                content=form.get_content(),
+                )
+            return HttpResponseRedirect('/news')
+
+    return render(request, 'create_newspost.html', {"form": form})
+
+
+
+def delete_newspost(request, pk):
+
+    models.NewsPost.objects.get(pk=pk).delete()
+    return HttpResponseRedirect('/news')

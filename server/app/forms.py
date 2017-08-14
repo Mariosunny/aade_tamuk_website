@@ -21,3 +21,28 @@ class AdminLoginForm(forms.Form):
     def get_password(self):
 
     	return self.cleaned_data['password']
+
+
+class CreateNewspostForm(forms.Form):
+
+    title = forms.CharField()
+    content = forms.CharField(required=False)
+
+    def clean(self):
+
+    	data = super().clean()
+    	title = data.get('title')
+
+    	if title is None:
+
+    		raise forms.ValidationError("Newspost requires a title.")
+
+    	return data
+
+    def get_title(self):
+
+    	return self.cleaned_data.get('title')
+
+    def get_content(self):
+
+    	return self.cleaned_data.get('content')

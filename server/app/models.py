@@ -6,7 +6,6 @@ class NewsPost(models.Model):
 	title = models.CharField(max_length=128)
 	content = models.TextField(blank=True, null=True)
 	date = models.DateTimeField(auto_now_add=True)
-	category = models.IntegerField()
 
 	def __str__(self):
 

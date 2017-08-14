@@ -219,4 +219,34 @@ img .post-image {
 .form-error {
 	color: red;
 	font-size: 14px;
+	text-align: left;
+}
+
+form * {
+	display: block;
+	text-align: left;
+}
+
+form label {
+	margin: 0;
+}
+
+form input[type="text"],textarea {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+form input[type="submit"] {
+	padding: 3px 6px 3px 6px;
+}
+
+.admin-command {
+	font-size: 22px;
+	color: #0000cc;
+	text-decoration: none;
+}
+.admin-command:hover {
+	font-size: 22px;
+	color: #00004d;
+	text-decoration: none;
 }

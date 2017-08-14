@@ -19,4 +19,6 @@ urlpatterns = [
 	url(r'^events/', views.Events.as_view(), name= 'events'),
 	url(r'^news/', views.News.as_view(), name= 'news'),
 	url(r'^news/(?P<selected>\d+)/', views.News.as_view(), name= 'newspost'),
+	url(r'^create_newspost/', views.create_newspost, name= 'create_newspost'),
+	url(r'^delete_newspost/(?P<pk>\d+)/', views.delete_newspost, name= 'delete_newspost'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
