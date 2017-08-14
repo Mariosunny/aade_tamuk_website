@@ -1,0 +1,6 @@
+{% for picture in pictures %}
+  <div class="row section">
+      <img id="{{ picture.album.name }}" src="{{ picture.image.url }}" alt="...">
+      <h3> {{ picture.caption }}</h3>
+  </div>
+{% endfor %}

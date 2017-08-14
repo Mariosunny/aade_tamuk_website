@@ -33,9 +33,12 @@ class Event(models.Model):
 
 
 class Album(models.Model):
-
-	number = models.IntegerField()
+	def __str__(self):
+		return 'Album: ' + self.name
+		
+	name = models.CharField(max_length=128, default='Album')
 	description = models.TextField()
+	category = models.IntegerField()
 
 
 class Picture(models.Model):

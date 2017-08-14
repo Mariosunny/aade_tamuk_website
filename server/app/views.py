@@ -131,3 +131,41 @@ class News(WebsiteView):
         })
 
         return context;
+
+class MeetingsGallery(WebsiteView):
+    template_name = 'meetings.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        albums = models.Album.objects.filter(category=1)
+
+        pictures = models.Picture.objects.filter(album__in=albums).order_by("album")
+        context.update({
+            "pictures": [{
+                "album": picture.album,
+                "image": picture.image,
+                "caption": picture.caption
+            } for picture in pictures],
+            "albums": [{
+                "name": album.name
+            } for album in albums]
+        })
+
+        return context
+
+class Album(WebsiteView):
+    template_name = 'album.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        a = self.request.GET.get('album')
+        pictures = models.Picture.objects.filter(album__name=a)
+        print(len(pictures))
+        context.update({
+            "pictures": [{
+                "album": picture.album,
+                "image": picture.image,
+                "caption": picture.caption
+            } for picture in pictures]
+        })
+
+        return context
