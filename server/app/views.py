@@ -1,10 +1,20 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
+from django.core.urlresolvers import reverse
+from django.contrib.auth import logout, login, authenticate
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
 
 from . import models
+from . import forms
 
 class WebsiteView(TemplateView):
 
-    pass
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+
+        return context
 
 
 class Home(WebsiteView):
@@ -30,6 +40,30 @@ class Home(WebsiteView):
                 "pk": newspost.pk,
             } for newspost in newsposts]
         })
+
+        events = []
+
+        for event in models.Event.objects.all().order_by("-date"):
+
+            e = {
+                "title": event.title,
+                "date": event.date,
+                "details": event.details[:250] + "..." if len(event.details) > 250 else event.details,
+                "pk": event.pk,
+                "read_more": len(event.details) > 250,
+            }
+
+            if event.location:
+
+                e.update({
+                    "location": event.location,
+                    })
+
+            events.append(e)
+
+        context.update({
+            "events": events,
+            })
 
         return context
 
@@ -88,22 +122,36 @@ class Leadership(WebsiteView):
         return context;
 
 
-class AdminLogin(WebsiteView):
-
-    template_name = 'admin_login.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        return context;
-
-
 class Events(WebsiteView):
 
     template_name = 'events.html'
 
     def get_context_data(self, **kwargs):
+
         context = super().get_context_data(**kwargs)
+
+        events = []
+
+        for event in models.Event.objects.all().order_by("-date"):
+
+            e = {
+                "title": event.title,
+                "date": event.date,
+                "details": event.details,
+                "pk": event.pk,
+            }
+
+            if event.location:
+
+                e.update({
+                    "location": event.location,
+                    })
+
+            events.append(e)
+
+        context.update({
+            "events": events,
+            })
 
         return context;
 
@@ -118,8 +166,6 @@ class News(WebsiteView):
 
         newsposts = models.NewsPost.objects.all().order_by("-date")
 
-        print(self.kwargs)
-
         context.update({
             "newsposts": [{
                 "title": newspost.title,
@@ -132,6 +178,7 @@ class News(WebsiteView):
 
         return context;
 
+<<<<<<< HEAD
 class MeetingsGallery(WebsiteView):
     template_name = 'meetings.html'
 
@@ -169,3 +216,52 @@ class Album(WebsiteView):
         })
 
         return context
+=======
+
+def admin_login(request):
+
+    form = forms.AdminLoginForm()
+
+    if request.method == 'POST':
+
+        form = forms.AdminLoginForm(request.POST)
+
+        if form.is_valid():
+
+            login(request, authenticate(username="admin",password=form.get_password()))
+            return HttpResponseRedirect('/')
+
+    return render(request, 'admin_login.html', {"form": form})
+
+
+def admin_logout(request):
+
+    logout(request)
+    return HttpResponseRedirect('/')
+
+
+def create_newspost(request):
+
+    form = forms.CreateNewspostForm()
+
+    if request.method == 'POST':
+
+        form = forms.CreateNewspostForm(request.POST)
+
+        if form.is_valid():
+
+            models.NewsPost.objects.create(
+                title=form.get_title(),
+                content=form.get_content(),
+                )
+            return HttpResponseRedirect('/news')
+
+    return render(request, 'create_newspost.html', {"form": form})
+
+
+
+def delete_newspost(request, pk):
+
+    models.NewsPost.objects.get(pk=pk).delete()
+    return HttpResponseRedirect('/news')
+>>>>>>> upstream/master

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container page-content">
+	<div class="row">
+	    <div class="container">
+        <div class="row section">
+			  <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+          <div class="row section center">
+            <h2 id="selected" data-selected="{{selected}}">New Newspost</h2>
+            {% if user.is_authenticated %}
+              <form action="{% url 'create_newspost' %}" method="post" style="margin-bottom:20px;">
+                {% csrf_token %}
+                <label>Title*</label>
+                <input type="text" name="title"/>
+                <label>Details</label>
+                <textarea rows="8" name="content"></textarea>
+                <input type="submit" value="Submit">
+              </form>
+              {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                  <div class="form-error">{{error}}</div>
+                {% endfor %}
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

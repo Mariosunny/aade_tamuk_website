@@ -4,9 +4,12 @@ from django.db import models
 class NewsPost(models.Model):
 
 	title = models.CharField(max_length=128)
-	content = models.TextField()
+	content = models.TextField(blank=True, null=True)
 	date = models.DateTimeField(auto_now_add=True)
-	category = models.IntegerField()
+
+	def __str__(self):
+
+		return self.title
 
 
 class RegisteredMember(models.Model):
@@ -16,6 +19,10 @@ class RegisteredMember(models.Model):
 	phone_number = models.CharField(max_length=16)
 	tshirt_size = models.IntegerField()
 
+	def __str__(self):
+
+		return self.name
+
 
 class Officer(models.Model):
 
@@ -24,12 +31,21 @@ class Officer(models.Model):
 	position = models.IntegerField()
 	picture = models.ImageField()
 
+	def __str__(self):
+
+		return self.name
+
 
 class Event(models.Model):
 
 	title = models.CharField(max_length=128)
-	details = models.TextField()
+	location = models.CharField(max_length=256, blank=True, null=True)
+	details = models.TextField(blank=True, null=True)
 	date = models.DateTimeField()
+
+	def __str__(self):
+
+		return self.title
 
 
 class Album(models.Model):

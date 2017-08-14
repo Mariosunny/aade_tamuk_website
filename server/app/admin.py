@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import NewsPost, RegisteredMember, Officer, Album, Picture
+from app.models import NewsPost, RegisteredMember, Officer, Album, Picture, Event
 
 class NewsPostAdmin(admin.ModelAdmin):
 
@@ -20,7 +20,13 @@ class AlbumAdmin(admin.ModelAdmin):
 	
     pass
 
+
 class PictureAdmin(admin.ModelAdmin):
+	
+    pass
+
+
+class EventAdmin(admin.ModelAdmin):
 	
     pass
 
@@ -29,3 +35,5 @@ admin.site.register(RegisteredMember, RegisteredMemberAdmin)
 admin.site.register(Officer, OfficerAdmin)
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Picture, PictureAdmin)
+admin.site.register(Event, EventAdmin)
+

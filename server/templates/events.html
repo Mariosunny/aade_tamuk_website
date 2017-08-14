@@ -9,13 +9,14 @@
           <div class="col-lg-8">
             <div class="row section center">
               <h2>Events</h2>
-              <hr>
-              </br>
-              <p class = "centered-paragraph"> Interested in supporting AADE? </br>
-                Consider donating. </br>
-                Your donations are valuable to us.
-              </p>
-              <p> Paypal Link </p>
+              {% for event in events %}
+                <div class="event" name="{{event.pk}}">
+                  <div class="event-title">{{event.title}}</div>
+                  <div class="event-date"><b>Date: </b>{{event.date|date:"M d Y @ P"}}</div>
+                  <div class="event-location"><b>Location: </b>{{event.location}}</div>
+                  <div class="event-details">{{event.details|linebreaks}}</div>
+                </div>
+              {% endfor %}
             </div>
           </div>
         </div>

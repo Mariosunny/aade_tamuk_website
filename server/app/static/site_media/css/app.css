@@ -74,6 +74,51 @@ div #content {
 	font-size: 16px;
 }
 
+.news {
+	margin-bottom: 75px;
+	text-align: left;
+}
+
+.event {
+	text-align: left;
+}
+
+.event-title {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-bottom: 5px;
+	color: #ed4146;
+	font-size: 34px;
+	padding: 0px;
+}
+
+.event-title-sub {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-bottom: 5px;
+	color: #ed4146;
+	font-size: 24px;
+	padding: 0px;
+}
+
+.event-title-sub a:hover {
+	color: #d2141a;
+	text-decoration: none;
+}
+
+.event-date {
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.event-location {
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.event-details p{
+	font-weight: normal;
+	font-size: 16px;
+}
+
 ul {
 	font-family: 'Bitter', serif;
 	font-size: 15px;
@@ -180,3 +225,44 @@ img .post-image {
     background-color: transparent;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+.form-error {
+	color: red;
+	font-size: 14px;
+	text-align: left;
+}
+
+form * {
+	display: block;
+	text-align: left;
+}
+
+form label {
+	margin: 0;
+}
+
+form input[type="text"],textarea {
+	width: 100%;
+}
+
+form input, textarea {
+	margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+	padding: 3px 6px 3px 6px;
+}
+
+.admin-command {
+	font-size: 22px;
+	color: #0000cc;
+	text-decoration: none;
+}
+.admin-command:hover {
+	font-size: 22px;
+	color: #00004d;
+	text-decoration: none;
+}
+>>>>>>> upstream/master
