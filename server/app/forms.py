@@ -1,8 +1,4 @@
 from django import forms
-
-class MeetingGalleryForm(forms.Form):
-    pictures = forms.ModelChoiceField(queryset=Pictures.object.filter(category=1).order_by('name'))
-
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
