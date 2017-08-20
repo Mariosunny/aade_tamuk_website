@@ -9,7 +9,6 @@
           <div class="col-lg-8">
             <div class="row section center">
               <h2 id="selected" data-selected="{{selected}}">News</h2>
-              {% if user.is_authenticated %}<a style="font-size:22px;" class="admin-command" href="{% url 'create_newspost' %}"><button>New Newspost</button></a>{% endif %}
               {% for newspost in newsposts %}
                 <div class="news" name="{{newspost.pk}}">
                   <div class="news-title">{{newspost.title}}</div>

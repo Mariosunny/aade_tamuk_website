@@ -1,6 +1,6 @@
 body {
 	padding-top: 50px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 html {
@@ -13,13 +13,11 @@ h1 {
 }
 
 h2 {
-	font-family: 'Roboto Condensed', sans-serif;
 	text-align: center;
 	font-size: 60px;
 }
 
 h3 {
-	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
 	font-size: 40px;
@@ -27,7 +25,6 @@ h3 {
 }
 
 h4 {
-	font-family: 'Bitter', serif;
 	font-size: 16px;
 	font-weight: bold;
 	text-align: center;
@@ -38,7 +35,6 @@ h4 {
 }
 
 .news-title {
-	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
 	font-size: 34px;
@@ -74,7 +70,6 @@ h4 {
 }
 
 .event-title {
-	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
 	font-size: 34px;
@@ -82,7 +77,6 @@ h4 {
 }
 
 .event-title-sub {
-	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
 	font-size: 24px;
@@ -110,12 +104,10 @@ h4 {
 }
 
 ul {
-	font-family: 'Bitter', serif;
 	font-size: 15px;
 }
 
 p {
-	font-family: 'Bitter', serif;
 	font-size: 18px;
 }
 

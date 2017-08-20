@@ -9,7 +9,6 @@
             <li><a href="{% url 'about_us' %}">About Us</a></li>
             <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
             <li><a href="{% url 'partners' %}">Partners</a></li>
-            <li>{% if is_logged_in %}Logged in as Admin{% else %}<a href="{% url 'admin_login' %}">Admin Login</a>{% endif %}</li>
           </ul>
         </div>
       </div>
