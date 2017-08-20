@@ -2,12 +2,39 @@
 {% load static %}
 
 {% block content %}
+  <div class="slideshow">
+    <div class="slideshow-content">
+      {% for slide in slides %}
+      <div class="slideshow-slide" data-number="{{forloop.counter0}}">
+        <img class="slideshow-slide-img" src="{{slide.img}}"/>
+        <div class="slideshow-slide-content">
+          <div class="slideshow-slide-content-title">
+            {{slide.title}}
+          </div>
+          <div class="slideshow-slide-content-body">
+            {{slide.body}}
+          </div>
+          <div class="slideshow-slide-content-read-more">
+            <a href="{{slide.url}}">Read more...</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="slideshow-nav-arrow slideshow-nav-arrow-left">&#10094;</div>
+      <div class="slideshow-nav-arrow slideshow-nav-arrow-right">&#10095;</div>
+    </div>
+    <div class="slideshow-nav">
+      {% for slide in slides %}
+        <div class="slideshow-nav-button" data-number="{{forloop.counter0}}"></div>
+      {% endfor %}
+    </div>
+  </div>
   <div class="container page-content">
   	<div class="row">
 		    <div class="container">
           <div class="row section">
-				  <div class="col-lg-1"></div>
-          <div class="col-lg-7">
+				  <div class="col-lg-2"></div>
+          <div class="col-lg-8">
             <div class="row section">
               {% for newspost in newsposts %}
               	<div class="news">
@@ -19,24 +46,17 @@
               {% endfor %}
             </div>
           </div>
-          <div class="col-lg-2">
-            <div class="affix" style="padding-top:40px;z-index:9999;background-color:white;padding:5px;">
-              <div class="container">
-                <h4>Upcoming Events</h4>
-                {% for event in events %}
-                  <div class="row">
-                    <div class="event-title-sub"><a href="{% url 'events' %}">{{event.title}}</a></div>
-                    <div class="event-date"><b>Date: </b>{{event.date|date:"M d Y @ P"}}</div>
-                    <div class="event-location"><b>Location: </b>{{event.location}}</div>
-                    <div class="event-details">{{event.details|linebreaks}}</div>
-                    {% if event.read_more %}<a href="{% url 'events' %}">Read more...</a>{% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
+          <div class="col-lg-2"></div>
         </div>
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'site_media\css\slideshow.css' %}" />
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'site_media/js/slideshow.js' %}" type="text/javascript"></script>
 {% endblock %}

@@ -1,6 +1,19 @@
 from django.db import models
 
 
+class Slide(models.Model):
+
+	position = models.IntegerField()
+	title = models.CharField(max_length=64)
+	body = models.TextField(max_length=256)
+	link = models.URLField()
+	image = models.ImageField(upload_to='uploads/')
+
+	def __str__(self):
+
+		return self.title
+
+
 class NewsPost(models.Model):
 
 	title = models.CharField(max_length=128)

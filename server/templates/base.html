@@ -10,8 +10,13 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'site_media\css\app.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'site_media\css\nav-bar.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'site_media\css\footer.css' %}" />
+	{% block css %}
+	{% endblock %}
 	<link href="https://fonts.googleapis.com/css?family=Bitter|Hind" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<script src="{% static 'site_media/js/jquery.js' %}" type="text/javascript"></script>
+	{% block javascript %}
+	{% endblock %}
 </head>
 <body>
 	{% include "navbar.html" %}
@@ -37,49 +42,6 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
 	{% include "footer.html" %}
-
-	<script  type='text/javascript' src="http://code.jquery.com/jquery-3.1.1.js"></script>
-	{% block javascript %}{% endblock %}
-=======
-</div>
-<footer>
-  <div class="container" >
-    <div class="row">
-      <div class="col-md-4 col-sm-6 footerleft ">
-        <h6 class="heading7">Contact Us</h6>
-        <ul class="footer-ul">
-          <li><p class="email">Email: </h6><a href="#"> email@tamuk.edu </a></li>
-          <li><p class="web">Web: </h6><a href="#"> Contact Us </a></li>
-        </ul>
-        <ul class="footer-ul">
-          <p> AADE </p>
-          <p>Texas A&M University Kingsville</p>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- / .footer -->
-<div class="copyright">
-    <div class="container">
-      <div class="col-md-6">
-        <p id="copyright">© 2017 American Association of Drilling Engineers at Texas A&M University-Kingsville</p>
-      </div>
-      <div class="col-md-6">
-        <ul class="bottom_footer_ul">
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about_us' %}">About Us</a></li>
-          <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
-          <li><a href="{% url 'partners' %}">Partners</a></li>
-          <li>{% if user.is_authenticated %}<a href="{% url 'admin_logout' %}">Logged in as Admin</a>{% else %}<a href="{% url 'admin_login' %}">Admin Login</a>{% endif %}</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-<!-- /.copyright -->
-<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
->>>>>>> upstream/master
 </body>
 </html>

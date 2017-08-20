@@ -244,12 +244,12 @@ form input[type="submit"] {
 }
 
 .admin-command {
-	font-size: 22px;
+	font-size: 18px;
 	color: #0000cc;
 	text-decoration: none;
 }
 .admin-command:hover {
-	font-size: 22px;
-	color: #00004d;
+	font-size: 18px;
+	color: #00008d;
 	text-decoration: none;
 }

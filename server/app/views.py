@@ -41,29 +41,18 @@ class Home(WebsiteView):
             } for newspost in newsposts]
         })
 
-        events = []
+        slides = []
 
-        for event in models.Event.objects.all().order_by("-date"):
+        for slide in models.Slide.objects.all().order_by("position"):
 
-            e = {
-                "title": event.title,
-                "date": event.date,
-                "details": event.details[:250] + "..." if len(event.details) > 250 else event.details,
-                "pk": event.pk,
-                "read_more": len(event.details) > 250,
-            }
+            slides.append({
+                "title": slide.title,
+                "body": slide.body,
+                "img": slide.image.url,
+                "url": slide.link,
+                })
 
-            if event.location:
-
-                e.update({
-                    "location": event.location,
-                    })
-
-            events.append(e)
-
-        context.update({
-            "events": events,
-            })
+        context.update({"slides": slides})
 
         return context
 
@@ -122,9 +111,9 @@ class Leadership(WebsiteView):
         return context;
 
 
-class Events(WebsiteView):
+class Calendar(WebsiteView):
 
-    template_name = 'events.html'
+    template_name = 'calendar.html'
 
     def get_context_data(self, **kwargs):
 
