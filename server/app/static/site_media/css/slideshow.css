@@ -25,11 +25,11 @@
 	left: 50px;
 	height: calc(400px - 40px);
 	width: 450px;
-	background-color: rgba(255, 255, 255, 0.4);
 	padding: 8px;
-	color: black;
+	color: white;
 	overflow: hidden;
 	transition: 0.25s ease;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .slideshow-slide-content-title {
 	font-size: 26px;
@@ -42,8 +42,20 @@
 .slideshow-slide-content-read-more {
 	position: absolute;
 	bottom: 8px;
-	right: 8px;
-	font-size: 18px;
+	left: 8px;=
+}
+.slideshow-slide-content-read-more button{
+	padding: 10px 20px 10px 20px;
+	background-color: transparent;
+	border-color: white;
+	font-size: 16px;
+	color: white;
+	border-style: solid;
+	border-width: 1px;
+	transition: 0.5s ease;
+}
+.slideshow-slide-content-read-more button:hover{
+	background-color: rgba(255, 0, 0, 0.5);
 }
 .slideshow-nav-arrow {
 	cursor: pointer;
@@ -64,7 +76,7 @@
 	right: 0;
 }
 .slideshow-nav {
-	padding: 2px;
+	padding: 4px;
 	margin: auto;
 	width: 100%;
 	text-align: center;
