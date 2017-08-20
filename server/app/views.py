@@ -140,6 +140,45 @@ def contact_us(request):
     return render(request, 'contactUs.html', {"form": form})
 
 
+def join_us(request):
+
+    form = forms.JoinUsForm()
+
+    if request.method == 'POST':
+
+        form = forms.JoinUsForm(request.POST)
+
+        if form.is_valid():
+
+            data = form.cleaned_data
+
+            models.RegisteredMember.objects.create(
+                name=data.get('name'),
+                email=data.get('email'),
+                phone_number=data.get('phone'),
+                tshirt_size=int(data.get('t_shirt_size')),
+                )
+
+            send_mail(
+                "Thank you for joining AADE-TAMUK",
+                "Thank you for joining AADE-TAMUK. We have added you to our email list. You will be notified of any upcoming meetings." +
+                "\n\nTyler Hurson\nAADE-TAMUK Webmaster",
+                CONTACT_EMAIL,
+                [data.get('email')],
+            )
+
+            send_mail(
+                "AADE: " + data.get('name') + " has joined us",
+                data.get('name') + " has joined the AADE using our website's Join Us form.\n\nTheir email:\n\n" + data.get('email'),
+                SENDER_EMAIL,
+                [CONTACT_EMAIL],
+            )
+
+            return render(request, 'join_us.html', {"form": forms.JoinUsForm(), "submitted": True})
+
+    return render(request, 'join_us.html', {"form": form})
+
+
 class Leadership(WebsiteView):
 
     template_name = 'leadership.html'

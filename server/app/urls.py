@@ -13,6 +13,7 @@ urlpatterns = [
 	url(r'^donate/', views.Donations.as_view(), name= 'donate'),
 	url(r'^leadership/', views.Leadership.as_view(), name= 'leadership'),
 	url(r'^contact_us/', views.contact_us, name= 'contact_us'),
+	url(r'^join_us/', views.join_us, name= 'join_us'),
 	url(r'^calendar/', views.Calendar.as_view(), name= 'calendar'),
 	url(r'^gallery/meetings/?', views.MeetingsGallery.as_view(), name= 'meetings'),
 	url(r'^gallery/pictures/', views.Album.as_view(), name= 'album'),

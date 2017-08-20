@@ -195,7 +195,9 @@ form input[type="text"],input[type="email"],textarea {
 
 form input, textarea {
 	margin-bottom: 10px;
-
+}
+select {
+	margin-bottom: 10px;
 }
 form input[type="submit"] {
 	padding: 3px 6px 3px 6px;

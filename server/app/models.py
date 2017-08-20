@@ -28,7 +28,7 @@ class NewsPost(models.Model):
 class RegisteredMember(models.Model):
 
 	name = models.CharField(max_length=128)
-	email = models.EmailField()
+	email = models.EmailField(unique=True)
 	phone_number = models.CharField(max_length=16)
 	tshirt_size = models.IntegerField()
 

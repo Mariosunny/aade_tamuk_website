@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="container">
+			<div class="row section">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-8">
+					<div class="row">
+						<h2>Join Us</h2>
+						<p>Are you a TAMU-K student interested in joining our organization? Complete this form to register for AADE-TAMUK.</p>
+						<form action="{% url 'join_us' %}" method="post">
+							{% csrf_token %}
+							<label>Name</label>
+							<input type="text" name="name" autofocus />
+							<label>Email</label>
+							<input type="email" name="email" />
+							<label>Phone</label>
+							<input type="text" name="phone" />
+							<label>T-shirt Size</label>
+							<select name="t_shirt_size">
+								<option value="0">Small</option>
+								<option value="1">Medium</option>
+								<option value="2">Large</option>
+								<option value="3">Extra Large</option>
+							</select>
+							<input type="submit" value="Submit">
+						</form>
+						{% if form.non_field_errors %}
+							{% for error in form.non_field_errors %}
+								<div class="form-error">{{error}}</div>
+							{% endfor %}
+						{% endif %}
+						{% if submitted %}
+							<p>Thank you for registering for AADE-TAMUK. We have added you to our email list. You will be notified of any upcoming meetings.</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- row end -->
+</div>
+{% endblock %}
