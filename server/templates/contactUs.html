@@ -9,21 +9,26 @@
 				<div class="col-lg-8">
 					<div class="row">
 						<h2>Contact Us</h2>
-						<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
-							<div class="row">
-								<label for="name">Name</label><br />
-								<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
-							</div>
-							<div class="row">
-								<label for="email">Email</label><br />
-								<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
-							</div>
-							<div class="row">
-								<label for="message">Message</label><br />
-								<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
-							</div>
-							<input id="submit_button" type="submit" value="Send" />
+						<p>Questions about the organization? Interested in becoming a partner? Send us a message. Unless we are busy, we will likely get back to you within the day.</p>
+						<p>Alternatively, you can contact us at <b>(512) 412-2580</b>.</p>
+						<form action="{% url 'contact_us' %}" method="post">
+							{% csrf_token %}
+							<label>Name</label>
+							<input type="text" name="name" autofocus />
+							<label>Email</label>
+							<input type="email" name="email" />
+							<label>Message</label>
+							<textarea rows="8" name="message"></textarea>
+							<input type="submit" value="Submit">
 						</form>
+						{% if form.non_field_errors %}
+							{% for error in form.non_field_errors %}
+								<div class="form-error">{{error}}</div>
+							{% endfor %}
+						{% endif %}
+						{% if submitted %}
+							<p>Thank you for contacting AADE-TAMUK. We will respond to your message as soon as possible.</p>
+						{% endif %}
 					</div>
 				</div>
 			</div>

@@ -3,10 +3,14 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth import logout, login, authenticate
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-
+from django.core.mail import send_mail
 
 from . import models
 from . import forms
+
+CONTACT_EMAIL = "tyler.hurson@students.tamuk.edu"
+SENDER_EMAIL = "glassplotful@gmail.com"
+
 
 class WebsiteView(TemplateView):
 
@@ -100,6 +104,41 @@ class ContactUs(WebsiteView):
         context = super().get_context_data(**kwargs)
 
         return context;
+
+def contact_us(request):
+
+    form = forms.ContactUsForm()
+
+    if request.method == 'POST':
+
+        form = forms.ContactUsForm(request.POST)
+
+        if form.is_valid():
+
+            name = form.cleaned_data.get('name')
+            message = form.cleaned_data.get('message')
+            email = form.cleaned_data.get('email')
+
+            send_mail(
+                "Thank you for contacting AADE-TAMUK",
+                "Thank you for contacting AADE-TAMUK. We will respond to your message as soon as possible.\n\nYour original message:\n\n" + message +
+                "\n\nTyler Hurson\nAADE-TAMUK Webmaster",
+                CONTACT_EMAIL,
+                [email],
+            )
+
+            send_mail(
+                "AADE: " + name + " has contacted us",
+                name + " has contacted the AADE using our website's Contact Us form.\n\nTheir email:\n\n" + 
+                email + "\n\nTheir message:\n\n" + message,
+                SENDER_EMAIL,
+                [CONTACT_EMAIL],
+            )
+
+            return render(request, 'contactUs.html', {"form": forms.ContactUsForm(), "submitted": True})
+
+    return render(request, 'contactUs.html', {"form": form})
+
 
 class Leadership(WebsiteView):
 
@@ -204,4 +243,3 @@ class Album(WebsiteView):
         })
 
         return context
-        
