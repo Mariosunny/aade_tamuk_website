@@ -38,9 +38,6 @@ h4 {
 	padding-bottom: 5px;
 	color: #ed4146;
 	font-size: 34px;
-	padding: 0px 8px 0px 8px;
-	background-color: #f4c8ca;
-	margin-bottom: 5px;
 }
 
 .news-title a {
@@ -70,44 +67,6 @@ h4 {
 .news {
 	margin-bottom: 75px;
 	text-align: left;
-}
-
-.event {
-	text-align: left;
-}
-
-.event-title {
-	padding-bottom: 5px;
-	color: #ed4146;
-	font-size: 34px;
-	padding: 0px;
-}
-
-.event-title-sub {
-	padding-bottom: 5px;
-	color: #ed4146;
-	font-size: 24px;
-	padding: 0px;
-}
-
-.event-title-sub a:hover {
-	color: #d2141a;
-	text-decoration: none;
-}
-
-.event-date {
-	margin-bottom: 5px;
-	font-size: 16px;
-}
-
-.event-location {
-	margin-bottom: 5px;
-	font-size: 16px;
-}
-
-.event-details p{
-	font-weight: normal;
-	font-size: 16px;
 }
 
 ul {
