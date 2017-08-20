@@ -1,6 +1,7 @@
 .slideshow {
 	width: 100%;
 	margin-top: 50px;
+	margin-bottom: 20px;
 }
 .slideshow-content {
 	overflow: hidden;
@@ -28,7 +29,6 @@
 	padding: 8px;
 	color: black;
 	overflow: hidden;
-	border-radius: 5px;
 	transition: 0.25s ease;
 }
 .slideshow-slide-content-title {

@@ -38,7 +38,13 @@ h4 {
 	padding-bottom: 5px;
 	color: #ed4146;
 	font-size: 34px;
-	padding: 0px;
+	padding: 0px 8px 0px 8px;
+	background-color: #f4c8ca;
+	margin-bottom: 5px;
+}
+
+.news-title a {
+	transition: 0.25s ease;
 }
 
 .nav a:hover {
@@ -53,6 +59,7 @@ h4 {
 .news-date {
 	color: #888888;
 	margin-bottom: 3px;
+	font-size: 16px;
 }
 
 .news-content p{
