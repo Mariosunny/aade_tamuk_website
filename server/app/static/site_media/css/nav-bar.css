@@ -1,10 +1,11 @@
 /*navbar css*/
 
 .navbar-default {
-  font-family: 'Hind', sans-serif;
-  background-color: #d3121c;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  background-color: white;
 	font-size: 16px;
-  border-color: #d3121c;
+  border-color: white;
 	height: 60px;
   vertical-align:middle;
   display: inline-block;
@@ -14,8 +15,10 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-	background-color: #d3121c;
-	color: white;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  color: #d3121c;
+	background-color: white;
 }
 
 .navbar-default .navbar-brand {
@@ -57,13 +60,13 @@
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-	color: #f9feff;
+	color: white;
 	background-color: #d3121c;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #171717;
+  color: white;
   background-color: #d3121c;
 }
 .navbar-default .navbar-toggle {
@@ -97,15 +100,32 @@
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #eaeaea;
+    color: white;
 		background-color: #d3121c;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #eaeaea;
+    color: white;
     background-color: #d3121c;
   }
+}
+
+.navbar-brand {
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin: auto;
+  padding: 0
+}
+
+.navbar-left {
+  padding-top: 25px;
+}
+
+.navbar-right {
+  padding-top: 25px;
 }
 
 /*dropdown functionality*/
@@ -151,7 +171,3 @@
 .dropdown-submenu.pull-left {
     float: none;
 }
-
-
-
-/*!navbar css*/

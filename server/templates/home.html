@@ -3,37 +3,26 @@
 
 {% block content %}
   <div class="container page-content">
-  	<div class="row">
-		    <div class="container">
-          <div class="row section">
-				  <div class="col-lg-1"></div>
-          <div class="col-lg-7">
-            <div class="row section">
-              {% for newspost in newsposts %}
-              	<div class="news">
-	              	<div class="news-title"><a href="{% url 'newspost' newspost.pk %}">{{newspost.title}}</a></div>
-	              	<div class="news-date">{{newspost.date|date:"M d Y"}}</div>
-	              	<div class="news-content">{{newspost.content|linebreaks}}</div>
-	              	{% if newspost.read_more %}<p class=""><a href="{% url 'newspost' newspost.pk %}">Read more...</a></p>{% endif %}
-              	</div>
-              {% endfor %}
-            </div>
-          </div>
-          <div class="col-lg-2">
-            <div class="affix" style="padding-top:40px;z-index:9999;background-color:white;padding:5px;">
-              <div class="container">
-                <h4>Upcoming Events</h4>
-                {% for event in events %}
-                  <div class="row">
-                    <div class="event-title-sub"><a href="{% url 'events' %}">{{event.title}}</a></div>
-                    <div class="event-date"><b>Date: </b>{{event.date|date:"M d Y @ P"}}</div>
-                    <div class="event-location"><b>Location: </b>{{event.location}}</div>
-                    <div class="event-details">{{event.details|linebreaks}}</div>
-                    {% if event.read_more %}<a href="{% url 'events' %}">Read more...</a>{% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
+      <div class="row section">
+      <div class="col-lg-8">
+        <div class="row section">
+          {% for newspost in newsposts %}
+          	<div class="news">
+            	<div class="news-title"><a href="{% url 'newspost' newspost.pk %}">{{newspost.title}}</a></div>
+            	<div class="news-date">{{newspost.date|date:"M d Y"}}</div>
+            	<div class="news-content">{{newspost.content|linebreaks}}</div>
+            	{% if newspost.read_more %}<p class=""><a href="{% url 'newspost' newspost.pk %}">Read more...</a></p>{% endif %}
+          	</div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-3">
+        <div class="row">
+          <h4 class="upcoming_events">Upcoming Events</h4>
+          <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=negk19uohc7g8s6a5volpqiao0%40group.calendar.google.com&amp;color=%23853104&amp;ctz=America%2FWinnipeg"></iframe>
+
+          <div class="side-content">
           </div>
         </div>
       </div>
