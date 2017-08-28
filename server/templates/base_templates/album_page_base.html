@@ -1,4 +1,5 @@
 {% extends "base_templates/base.html" %}
+{% load underscore_filter %}
 {% load static %}
 
 {% block content %}
@@ -12,7 +13,7 @@
           {% endblock %}
           <select id="selector">
             {% for album in albums  %}
-              <option value="{{ album.name }}"> {{ album.name }} </option>
+              <option value="{{ album.name }}"> {{ album.name|replace_underscores }} </option>
             {% endfor %}
           </select>
           <div id="content">

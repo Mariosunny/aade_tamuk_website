@@ -8,11 +8,6 @@ html {
 }
 
 h1 {
-	font-weight: 700;
-	font-size: 40px;
-}
-
-h2 {
 	text-align: center;
 	font-size: 60px;
 	padding: 50px 0;
@@ -98,7 +93,8 @@ iframe {
 }
 
 .page-content {
-	padding-top: 125px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .side-content {
@@ -178,7 +174,7 @@ img .post-image {
 		padding-top: 10px;
 }
 
-.left-h2 {
+.left-h1 {
 	text-align: left;
 	padding-left: 15px;
 	padding-bottom: 10px;
