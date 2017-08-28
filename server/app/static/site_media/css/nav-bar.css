@@ -123,16 +123,18 @@
 .brand_image {
 padding-top: 25px;
 padding-bottom: 25px;
-padding-left: 50px;
+padding-left: 25px;
+padding-right: 25px;
 }
 
 .navbar-left {
-  padding-left: 50px;
   padding-top: 25px;
+  padding-left: 25px;
 }
 
 .navbar-right {
   padding-top: 25px;
+  padding-right: 25px;
 }
 
 /*dropdown functionality*/
