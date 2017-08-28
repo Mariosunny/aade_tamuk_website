@@ -3,10 +3,14 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth import logout, login, authenticate
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-
+from django.core.mail import send_mail
 
 from . import models
 from . import forms
+
+CONTACT_EMAIL = "tyler.hurson@students.tamuk.edu"
+SENDER_EMAIL = "glassplotful@gmail.com"
+
 
 class WebsiteView(TemplateView):
 
@@ -41,29 +45,18 @@ class Home(WebsiteView):
             } for newspost in newsposts]
         })
 
-        events = []
+        slides = []
 
-        for event in models.Event.objects.all().order_by("-date"):
+        for slide in models.Slide.objects.all().order_by("position"):
 
-            e = {
-                "title": event.title,
-                "date": event.date,
-                "details": event.details[:250] + "..." if len(event.details) > 250 else event.details,
-                "pk": event.pk,
-                "read_more": len(event.details) > 250,
-            }
+            slides.append({
+                "title": slide.title,
+                "body": slide.body,
+                "img": slide.image.url,
+                "url": slide.link,
+                })
 
-            if event.location:
-
-                e.update({
-                    "location": event.location,
-                    })
-
-            events.append(e)
-
-        context.update({
-            "events": events,
-            })
+        context.update({"slides": slides})
 
         return context
 
@@ -112,6 +105,80 @@ class ContactUs(WebsiteView):
 
         return context;
 
+def contact_us(request):
+
+    form = forms.ContactUsForm()
+
+    if request.method == 'POST':
+
+        form = forms.ContactUsForm(request.POST)
+
+        if form.is_valid():
+
+            name = form.cleaned_data.get('name')
+            message = form.cleaned_data.get('message')
+            email = form.cleaned_data.get('email')
+
+            send_mail(
+                "Thank you for contacting AADE-TAMUK",
+                "Thank you for contacting AADE-TAMUK. We will respond to your message as soon as possible.\n\nYour original message:\n\n" + message +
+                "\n\nTyler Hurson\nAADE-TAMUK Webmaster",
+                CONTACT_EMAIL,
+                [email],
+            )
+
+            send_mail(
+                "AADE: " + name + " has contacted us",
+                name + " has contacted the AADE using our website's Contact Us form.\n\nTheir email:\n\n" + 
+                email + "\n\nTheir message:\n\n" + message,
+                SENDER_EMAIL,
+                [CONTACT_EMAIL],
+            )
+
+            return render(request, 'contactUs.html', {"form": forms.ContactUsForm(), "submitted": True})
+
+    return render(request, 'contactUs.html', {"form": form})
+
+
+def join_us(request):
+
+    form = forms.JoinUsForm()
+
+    if request.method == 'POST':
+
+        form = forms.JoinUsForm(request.POST)
+
+        if form.is_valid():
+
+            data = form.cleaned_data
+
+            models.RegisteredMember.objects.create(
+                name=data.get('name'),
+                email=data.get('email'),
+                phone_number=data.get('phone'),
+                tshirt_size=int(data.get('t_shirt_size')),
+                )
+
+            send_mail(
+                "Thank you for joining AADE-TAMUK",
+                "Thank you for joining AADE-TAMUK. We have added you to our email list. You will be notified of any upcoming meetings." +
+                "\n\nTyler Hurson\nAADE-TAMUK Webmaster",
+                CONTACT_EMAIL,
+                [data.get('email')],
+            )
+
+            send_mail(
+                "AADE: " + data.get('name') + " has joined us",
+                data.get('name') + " has joined the AADE using our website's Join Us form.\n\nTheir email:\n\n" + data.get('email'),
+                SENDER_EMAIL,
+                [CONTACT_EMAIL],
+            )
+
+            return render(request, 'join_us.html', {"form": forms.JoinUsForm(), "submitted": True})
+
+    return render(request, 'join_us.html', {"form": form})
+
+
 class Leadership(WebsiteView):
 
     template_name = 'leadership.html'
@@ -122,9 +189,9 @@ class Leadership(WebsiteView):
         return context;
 
 
-class Events(WebsiteView):
+class Calendar(WebsiteView):
 
-    template_name = 'events.html'
+    template_name = 'calendar.html'
 
     def get_context_data(self, **kwargs):
 
@@ -277,50 +344,3 @@ class Album(WebsiteView):
         })
 
         return context
-
-def admin_login(request):
-
-    form = forms.AdminLoginForm()
-
-    if request.method == 'POST':
-
-        form = forms.AdminLoginForm(request.POST)
-
-        if form.is_valid():
-
-            login(request, authenticate(username="admin",password=form.get_password()))
-            return HttpResponseRedirect('/')
-
-    return render(request, 'admin_login.html', {"form": form})
-
-
-def admin_logout(request):
-
-    logout(request)
-    return HttpResponseRedirect('/')
-
-
-def create_newspost(request):
-
-    form = forms.CreateNewspostForm()
-
-    if request.method == 'POST':
-
-        form = forms.CreateNewspostForm(request.POST)
-
-        if form.is_valid():
-
-            models.NewsPost.objects.create(
-                title=form.get_title(),
-                content=form.get_content(),
-                )
-            return HttpResponseRedirect('/news')
-
-    return render(request, 'create_newspost.html', {"form": form})
-
-
-
-def delete_newspost(request, pk):
-
-    models.NewsPost.objects.get(pk=pk).delete()
-    return HttpResponseRedirect('/news')

@@ -1,16 +1,17 @@
-<div class="copyright">
-    <div class="container">
-      <div class="col-md-6">
-        <p id="copyright">© 2017 American Association of Drilling Engineers at Texas A&M University-Kingsville</p>
-      </div>
-      <div class="col-md-6">
-        <ul class="bottom_footer_ul">
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about_us' %}">About Us</a></li>
-          <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
-          <li><a href="{% url 'partners' %}">Partners</a></li>
-          <li>{% if user.is_authenticated %}<a href="{% url 'admin_logout' %}">Logged in as Admin</a>{% else %}<a href="{% url 'admin_login' %}">Admin Login</a>{% endif %}</li>
-        </ul>
+
+  <div class="copyright">
+      <div class="container">
+        <div class="col-md-6">
+          <p>© 2017 American Association of Drilling Engineers at Texas A&M University-Kingsville</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="bottom_footer_ul">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+            <li><a href="{% url 'partners' %}">Partners</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,19 @@
 from django.db import models
 
 
+class Slide(models.Model):
+
+	position = models.IntegerField()
+	title = models.CharField(max_length=64)
+	body = models.TextField(max_length=256)
+	link = models.URLField()
+	image = models.ImageField(upload_to='uploads/')
+
+	def __str__(self):
+
+		return self.title
+
+
 class NewsPost(models.Model):
 
 	title = models.CharField(max_length=128)
@@ -15,7 +28,7 @@ class NewsPost(models.Model):
 class RegisteredMember(models.Model):
 
 	name = models.CharField(max_length=128)
-	email = models.EmailField()
+	email = models.EmailField(unique=True)
 	phone_number = models.CharField(max_length=16)
 	tshirt_size = models.IntegerField()
 

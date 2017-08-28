@@ -1,39 +1,11 @@
 from django.contrib import admin
-from app.models import NewsPost, RegisteredMember, Officer, Album, Picture, Event
-
-class NewsPostAdmin(admin.ModelAdmin):
-
-    pass
+from app.models import NewsPost, RegisteredMember, Officer, Album, Picture, Event, Slide
 
 
-class RegisteredMemberAdmin(admin.ModelAdmin):
-	
-    pass
-
-
-class OfficerAdmin(admin.ModelAdmin):
-	
-    pass
-
-
-class AlbumAdmin(admin.ModelAdmin):
-	
-    pass
-
-
-class PictureAdmin(admin.ModelAdmin):
-	
-    pass
-
-
-class EventAdmin(admin.ModelAdmin):
-	
-    pass
-
-admin.site.register(NewsPost, NewsPostAdmin)
-admin.site.register(RegisteredMember, RegisteredMemberAdmin)
-admin.site.register(Officer, OfficerAdmin)
-admin.site.register(Album, AlbumAdmin)
-admin.site.register(Picture, PictureAdmin)
-admin.site.register(Event, EventAdmin)
-
+admin.site.register(NewsPost)
+admin.site.register(RegisteredMember)
+admin.site.register(Officer)
+admin.site.register(Album)
+admin.site.register(Picture)
+admin.site.register(Event)
+admin.site.register(Slide)

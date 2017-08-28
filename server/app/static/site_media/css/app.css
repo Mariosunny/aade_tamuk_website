@@ -1,6 +1,6 @@
 body {
-	padding-top: 25px;
-	font-family: 'Raleway', sans-serif;
+	padding-top: 50px;
+	font-family: 'Lato', sans-serif;
 }
 
 html {
@@ -13,14 +13,12 @@ h1 {
 }
 
 h2 {
-	font-family: 'Roboto Condensed', sans-serif;
 	text-align: center;
 	font-size: 60px;
 	padding: 50px 0;
 }
 
 h3 {
-	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
 	font-size: 40px;
@@ -112,11 +110,13 @@ iframe {
 }
 
 .news-title {
-	font-family: 'Roboto Condensed', sans-serif;
 	padding-bottom: 5px;
 	color: #ed4146;
-	font-size: 32px;
-	padding: 0px;
+	font-size: 34px;
+}
+
+.news-title a {
+	transition: 0.25s ease;
 }
 
 .nav a:hover {
@@ -131,6 +131,7 @@ iframe {
 .news-date {
 	color: #888888;
 	margin-bottom: 3px;
+	font-size: 16px;
 }
 
 .news-content p{
@@ -142,45 +143,35 @@ iframe {
 	margin-bottom: 75px;
 	text-align: left;
 }
-
-.event {
-	text-align: left;
+ul {
+	font-size: 15px;
 }
 
-.event-title {
-	font-family: 'Roboto Condensed', sans-serif;
-	padding-bottom: 5px;
+p {
+	font-size: 18px;
+}
+
+a {
 	color: #ed4146;
-	font-size: 34px;
-	padding: 0px;
 }
 
-.event-title-sub {
-	font-family: 'Roboto Condensed', sans-serif;
-	padding-bottom: 5px;
-	color: #ed4146;
-	font-size: 24px;
-	padding: 0px;
+hr {
+	border: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
-.event-title-sub a:hover {
-	color: #d2141a;
-	text-decoration: none;
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
-.event-date {
-	margin-bottom: 5px;
-	font-size: 16px;
-}
-
-.event-location {
-	margin-bottom: 5px;
-	font-size: 16px;
-}
-
-.event-details p{
-	font-weight: normal;
-	font-size: 16px;
+img .post-image {
+	max-width: 600px;
+	height: 400px;
 }
 
 .section {
@@ -265,20 +256,39 @@ iframe {
 	font-size: 14px;
 	text-align: left;
 }
-
-
 #content {
 	padding-top: 0px;
 	text-align: center;
+form * {
+	display: block;
+	text-align: left;
+}
+
+form label {
+	margin: 0;
+}
+
+form input[type="text"],input[type="email"],textarea {
+	width: 100%;
+}
+
+form input, textarea {
+	margin-bottom: 10px;
+}
+select {
+	margin-bottom: 10px;
+}
+form input[type="submit"] {
+	padding: 3px 6px 3px 6px;
 }
 
 .admin-command {
-	font-size: 22px;
+	font-size: 18px;
 	color: #0000cc;
 	text-decoration: none;
 }
 .admin-command:hover {
-	font-size: 22px;
-	color: #00004d;
+	font-size: 18px;
+	color: #00008d;
 	text-decoration: none;
 }

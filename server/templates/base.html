@@ -7,41 +7,22 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 	<link rel="shortcut icon" href="{% static 'site_media\images\flavicon.png' %}" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{% static 'site_media\css\app.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'site_media\css\nav-bar.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'site_media\css\footer.css' %}" />
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	{% block css %}
+	{% endblock %}
+	<script src="{% static 'site_media/js/jquery.js' %}" type="text/javascript"></script>
+	{% block javascript %}
+	{% endblock %}
 </head>
 <body>
 	{% include "navbar.html" %}
 	{% block content %}
 	{% endblock %}
-
-	<div class="row">
-		<div class="col-lg-2">
-		</div>
-		<div class="col-lg-8">
-			<div class="row sponsors">
-				<div class="col-lg-6">
-					<a href="http://oriondrilling.com/"><img class="logo" src="{% static 'site_media\images\orion.jpg' %}" /></a>
-				</div>
-				<div class="col-lg-6">
-					<a href="https://www.newpark.com/"><img class="logo" src="{% static 'site_media\images\newpark.jpg' %}" /></a>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="http://www.gyrodata.com/"><img class="logo" src="{% static 'site_media\images\gyrodata.png' %}" /></a>
-				</div>
-			</div>
-		</div>
-	</div>
 	{% include "footer.html" %}
-
-	<script  type='text/javascript' src="http://code.jquery.com/jquery-3.1.1.js"></script>
-	{% block javascript %}{% endblock %}
-</div>
-<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
 </body>
 </html>
