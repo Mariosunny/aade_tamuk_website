@@ -120,7 +120,14 @@
   padding: 0
 }
 
+.brand_image {
+padding-top: 25px;
+padding-bottom: 25px;
+padding-left: 50px;
+}
+
 .navbar-left {
+  padding-left: 50px;
   padding-top: 25px;
 }
 
