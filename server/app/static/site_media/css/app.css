@@ -1,5 +1,5 @@
 body {
-	padding-top: 50px;
+	padding-top: 25px;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -8,14 +8,9 @@ html {
 }
 
 h1 {
-	font-weight: 700;
-	font-size: 40px;
-}
-
-h2 {
 	text-align: center;
 	font-size: 60px;
-	padding: 50px 0;
+	padding-top: 25px;
 }
 
 h3 {
@@ -32,6 +27,13 @@ h4 {
 	text-align: center;
 }
 
+h5 {
+	font-family: 'Lato', sans-serif;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+
 ul {
 	font-family: 'Bitter', serif;
 	font-size: 15px;
@@ -40,6 +42,7 @@ ul {
 p {
 	font-family: 'Bitter', serif;
 	font-size: 18px;
+	padding-bottom: 15px;
 }
 
 a {
@@ -56,8 +59,7 @@ img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 25px;
 }
 
 img .post-image {
@@ -93,12 +95,13 @@ select {
 		width: 200px;
 }
 
-iframe {
+.iframe-with-margin {
 	margin-left: 100px;
 }
 
 .page-content {
-	padding-top: 125px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .side-content {
@@ -161,24 +164,13 @@ hr {
   border-bottom: 1px solid black;
 }
 
-img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 40px;
-	padding-bottom: 40px;
-}
 
-img .post-image {
-	max-width: 600px;
-	height: 400px;
-}
 
 .section {
 		padding-top: 10px;
 }
 
-.left-h2 {
+.left-h1 {
 	text-align: left;
 	padding-left: 15px;
 	padding-bottom: 10px;
@@ -229,6 +221,8 @@ img .post-image {
  .sponsors {
 	 padding-top: 50px;
  }
+
+
 
  @media (min-width: 979px) {
                ul.nav li.dropdown:hover > ul.dropdown-menu {

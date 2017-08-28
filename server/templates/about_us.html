@@ -1,75 +1,76 @@
-{% extends "base.html" %}
+{% extends "base_templates/base.html" %}
 
 {% block content %}
-<div class="container page-content">
-  <div class="row">
-    <div class="container">
-      <div class="row section">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-          <div class="row section">
-            <h2>About Us</h2>
-            <hr>
-            </br>
+  <div class="container page-content">
+    <div class="row">
+      <div class="container">
+        <div class="row section">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <div class="row section center">
+              <h1>About Us</h1>
+              <hr>
+              </br>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- ./row -->
-      <div class="row section center">
-        <h3> About Us</h3>
-        <p> The American Association of Drilling Engineers
-            at Texas A&M University-Kingsville </br>
-            was founded on September 2016
-            by Charoenpong Songdechakraiwut. </br>
-            The organization operates under
-            the umbrella of the Central Texas Chapter.
-        </p>
-      </div>
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        {% load staticfiles %}
-        <img class = "medium-image" src="{% static 'site_media\images\aade-tamuk_about_us1.jpg' %}">
-      </div>
-      <!-- /.row -->
-      <div class="row center">
-        <h3> Mission </h3>
-        <p> We strive for excellence by offering a forum where our members can share their knowledge in drilling technology
-              and a channel to further their their professional careers in the O&G industry.
-        </p>
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <img class = "medium-image" src="{% static 'site_media\images\aade-tamuk_about_us2.jpg' %}">
-      </div>
-      <!-- /.row -->
-      <div class="row center">
-        <h3> Vision </h3>
-        <p>
-          To be an organization that benefits Texas A&M University-Kingsville,
-          the drilling industry, and the future of our members
-        </p>
-      </div>
-      <!-- /.row -->
-      <div class="row center ">
-        <img class = "medium-image" src="{% static 'site_media\images\aade-tamuk_about_us3.jpg' %}">
-      </div>
-      <!-- /.row -->
-      <div class="row center">
-        <h3> Values </h3>
-        <p> To promote professionalism and respect
-            within the drilling industry
-            and the engineering community
-        </p>
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-          <img src="{% static 'site_media\images\aade-tamuk_about_us4.jpg' %}">
+        <!-- ./row -->
+        <div class="row section center">
+          <h3>  Who We Are </h3>
+          <h5> The American Association of Drilling Engineers
+              at Texas A&M University-Kingsville 
+              was founded on September 2016
+              by Charoenpong Songdechakraiwut. </br>
+              The organization operates under
+              the umbrella of the Central Texas Chapter.
+          </h5>
+        </br></br></br></br>
+        </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          {% load staticfiles %}
+          <img class = "medium-image" src="{% static 'site_media\images\aade-tamuk_about_us1.jpg' %}">
+        </div>
+        <!-- /.row -->
+        <div class="row center">
+          <h3> Mission </h3>
+          <p> We strive for excellence by offering a forum where our members can share their knowledge in drilling technology
+                and a channel to further their their professional careers in the O&G industry.
+          </p>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          <img class = "medium-image" src="{% static 'site_media\images\aade-tamuk_about_us2.jpg' %}">
+        </div>
+        <!-- /.row -->
+        <div class="row center">
+          <h3> Vision </h3>
+          <p>
+            To be an organization that benefits Texas A&M University-Kingsville,
+            the drilling industry, and the future of our members
+          </p>
+        </div>
+        <!-- /.row -->
+        <div class="row center ">
+          <img class = "medium-image" src="{% static 'site_media\images\aade-tamuk_about_us3.jpg' %}">
+        </div>
+        <!-- /.row -->
+        <div class="row center">
+          <h3> Values </h3>
+          <p> To promote professionalism and respect
+              within the drilling industry
+              and the engineering community
+          </p>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <img src="{% static 'site_media\images\aade-tamuk_about_us4.jpg' %}">
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 {% endblock %}
