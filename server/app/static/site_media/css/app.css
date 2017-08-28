@@ -15,6 +15,7 @@ h1 {
 h2 {
 	text-align: center;
 	font-size: 60px;
+	padding: 50px 0;
 }
 
 h3 {
@@ -25,9 +26,83 @@ h3 {
 }
 
 h4 {
+	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	font-weight: bold;
 	text-align: center;
+}
+
+ul {
+	font-family: 'Bitter', serif;
+	font-size: 15px;
+}
+
+p {
+	font-family: 'Bitter', serif;
+	font-size: 18px;
+}
+
+a {
+	color: #ed4146;
+}
+
+hr {
+	border: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+img .post-image {
+	max-width: 600px;
+	height: 400px;
+}
+
+form * {
+	display: block;
+	text-align: left;
+}
+
+form label {
+	margin: 0;
+}
+
+form input[type="text"],textarea {
+	width: 100%;
+}
+
+form input, textarea {
+	margin-bottom: 10px;
+
+}
+form input[type="submit"] {
+	padding: 3px 6px 3px 6px;
+}
+
+select {
+		display: block;
+		margin: 0 auto;
+		font-size: 20px;
+		width: 200px;
+}
+
+iframe {
+	margin-left: 100px;
+}
+
+.page-content {
+	padding-top: 125px;
+}
+
+.side-content {
+		position: fixed;
 }
 
 .news {
@@ -68,7 +143,6 @@ h4 {
 	margin-bottom: 75px;
 	text-align: left;
 }
-
 ul {
 	font-size: 15px;
 }
@@ -110,14 +184,6 @@ img .post-image {
 	padding-bottom: 10px;
 }
 
-#content {
-	text-align: center;
-	padding-top: 25%;
-	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-				 0px 8px 13px rgba(0,0,0,0.1),
-				 0px 18px 23px rgba(0,0,0,0.1);
-}
-
 .center {
 		width: 800px;
 		margin:0 auto;
@@ -156,9 +222,12 @@ img .post-image {
 	 text-align: left;
  }
 
- /*Just used to make sure there is space before the footer.*/
- .page-content {
- 		padding-bottom: 75px;
+ .upcoming_events {
+	 width: 500px;
+ }
+
+ .sponsors {
+	 padding-top: 50px;
  }
 
  @media (min-width: 979px) {
@@ -166,6 +235,14 @@ img .post-image {
                      display: block;
                      margin-top:0px;
  }
+ }
+
+ .calendar {
+	 border-width: 0;
+	 width: 200;
+	 height:200;
+	 frameborder: 0;
+	 scrolling: "no";
  }
 
  .form-actions {
@@ -179,7 +256,9 @@ img .post-image {
 	font-size: 14px;
 	text-align: left;
 }
-
+#content {
+	padding-top: 0px;
+	text-align: center;
 form * {
 	display: block;
 	text-align: left;
