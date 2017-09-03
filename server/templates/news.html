@@ -5,10 +5,10 @@
   	<div class="row">
 		    <div class="container">
           <div class="row section">
-				  <div class="col-lg-2"></div>
-          <div class="col-lg-8">
+				  <div class="col-lg-1"></div>
+          <div class="col-lg-10">
             <div class="row section center">
-              <h2 id="selected" data-selected="{{selected}}">News</h2>
+              <h2 class="page-title">News</h2>
               {% for newspost in newsposts %}
                 <div class="news" name="{{newspost.pk}}">
                   {% if newspost.img %}<img class="news-image" src="{{newspost.img}}"/>{% endif %}
@@ -19,6 +19,7 @@
               {% endfor %}
             </div>
           </div>
+          <div class="col-lg-1"></div>
         </div>
       </div>
     </div>

@@ -1,26 +1,41 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container page-content">
   <div class="row">
-      <div class="container">
-        <div class="row section">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
+    <div class="container">
+      <div class="row section">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
           <div class="row section">
-          <h2>Partners</h2>
-          <hr>
-          </br>
-          <p class="center"> The American Association of Drilling Engineers at Texas A&M University-Kingsville </br>
-            would like to extend its thanks to the following organizations:
-          </p>
+            <h2 class="page-title">Partners</h2>
+            </br>
+            <p class="center"> The American Association of Drilling Engineers at Texas A&M University-Kingsville </br>
+              would like to extend its thanks to the following organizations:
+            </p>
+            <br/>
+          </div>
         </div>
-        <div class="row section">
-          {% load staticfiles %}
-          <img class="logo" src="{% static 'site_media\images\orion.jpg' %}" />
-          <img class="logo" src="{% static 'site_media\images\newpark.jpg' %}" />
-          <img class="logo" src="{% static 'site_media\images\gyrodata.png' %}" />
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-lg-6">
+          <a href="http://oriondrilling.com/"><img class="logo" src="{% static 'site_media\images\orion.jpg' %}" /></a>
         </div>
+        <div class="col-lg-6">
+          <a href="https://www.newpark.com/"><img class="logo" src="{% static 'site_media\images\newpark.jpg' %}" /></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <a href="http://www.gyrodata.com/"><img class="logo" src="{% static 'site_media\images\gyrodata.png' %}" /></a>
         </div>
       </div>
     </div>

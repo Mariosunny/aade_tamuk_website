@@ -5,19 +5,19 @@
 	<div class="row">
 		<div class="container">
 			<div class="row section">
-				<div class="col-lg-2"></div>
-				<div class="col-lg-8">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
 					<div class="row">
-						<h2>Join Us</h2>
+						<h2 class="page-title">Join Us</h2>
 						<p>Are you a TAMU-K student interested in joining our organization? Complete this form to register for AADE-TAMUK.</p>
 						<form action="{% url 'join_us' %}" method="post">
 							{% csrf_token %}
 							<label>Name</label>
-							<input type="text" name="name" autofocus />
+							<input type="text" name="name" style="width:200px;" autofocus />
 							<label>Email</label>
-							<input type="email" name="email" />
+							<input type="email" name="email" style="width:300px;"/>
 							<label>Phone</label>
-							<input type="text" name="phone" />
+							<input type="text" name="phone" style="width:150px;"/>
 							<label>T-shirt Size</label>
 							<select name="t_shirt_size">
 								<option value="0">Small</option>

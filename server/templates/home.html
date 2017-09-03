@@ -34,10 +34,11 @@
 	    <div class="container">
         <div class="row section">
           <div class="col-lg-8">
+            <h2 style="text-align:left;margin-left:-15px;margin-bottom:15px;">Recent News</h2>
             <div class="row section">
               {% for newspost in newsposts %}
               	<div class="news">
-                  {% if newspost.img %}<img class="news-image" src="{{newspost.img}}"/>{% endif %}
+                  {% if newspost.img %}<a href="{% url 'newspost' newspost.pk %}"><img class="news-image" src="{{newspost.img}}"/></a>{% endif %}
 	              	<div class="news-title"><a href="{% url 'newspost' newspost.pk %}">{{newspost.title}}</a></div>
 	              	<div class="news-date">{{newspost.date|date:"M d Y"}}</div>
 	              	<div class="news-content">{{newspost.content|linebreaks}}</div>
@@ -47,6 +48,7 @@
             </div>
           </div>
           <div class="col-lg-3">
+            <div style="font-size:18px;margin-left:100px;">Upcoming Events</div>
             <div id="calendar">
               <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=200&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=negk19uohc7g8s6a5volpqiao0%40group.calendar.google.com&amp;color=%23853104&amp;ctz=America%2FWinnipeg" style="border-width:0" width="275" height="275" frameborder="0" scrolling="no"></iframe>
               <a class="twitter-timeline" data-width="300" data-link-color="#E81C4F" style="margin-top:20px;" href="https://twitter.com/aadetamuk">Tweets by aadetamuk</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -58,28 +60,8 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-2">
-    </div>
-    <div class="col-lg-8">
-      <div class="row">
-        <div class="col-lg-6">
-          <a href="http://oriondrilling.com/"><img class="logo" src="{% static 'site_media\images\orion.jpg' %}" /></a>
-        </div>
-        <div class="col-lg-6">
-          <a href="https://www.newpark.com/"><img class="logo" src="{% static 'site_media\images\newpark.jpg' %}" /></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <a href="http://www.gyrodata.com/"><img class="logo" src="{% static 'site_media\images\gyrodata.png' %}" /></a>
-        </div>
-      </div>
-    </div>
-  </div>
 {% endblock %}
-
-{% block css %}
+ {% block css %}
   <link rel="stylesheet" type="text/css" href="{% static 'site_media\css\slideshow.css' %}" />
 {% endblock %}
 
