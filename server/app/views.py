@@ -130,7 +130,7 @@ def contact_us(request):
 
             send_mail(
                 "AADE: " + name + " has contacted us",
-                name + " has contacted the AADE using our website's Contact Us form.\n\nTheir email:\n\n" + 
+                name + " has contacted the AADE using our website's Contact Us form.\n\nTheir email:\n\n" +
                 email + "\n\nTheir message:\n\n" + message,
                 SENDER_EMAIL,
                 [CONTACT_EMAIL],
@@ -248,7 +248,7 @@ class News(WebsiteView):
         return context;
 
 class MeetingsGallery(WebsiteView):
-    template_name = 'meetings.html'
+    template_name = 'galleries/meetings.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -269,7 +269,7 @@ class MeetingsGallery(WebsiteView):
         return context
 
 class FieldTripGallery(WebsiteView):
-    template_name = 'field_trips.html'
+    template_name = 'galleries/field_trips.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -290,7 +290,7 @@ class FieldTripGallery(WebsiteView):
         return context
 
 class TrainingGallery(WebsiteView):
-    template_name = 'training.html'
+    template_name = 'galleries/training.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -311,7 +311,7 @@ class TrainingGallery(WebsiteView):
         return context
 
 class SocialGallery(WebsiteView):
-    template_name = 'social.html'
+    template_name = 'galleries/social.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

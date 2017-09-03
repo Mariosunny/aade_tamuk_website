@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_templates/base.html" %}
 
 {% block content %}
 <div class="container">
@@ -7,7 +7,7 @@
 			<div class="row section">
 				<div class="col-lg-1"></div>
 				<div class="col-lg-10">
-					<div class="row">
+					<div class="row section">
 						<h2 class="page-title">Join Us</h2>
 						<p>Are you a TAMU-K student interested in joining our organization? Complete this form to register for AADE-TAMUK.</p>
 						<form action="{% url 'join_us' %}" method="post">

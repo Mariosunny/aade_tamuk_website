@@ -2,7 +2,7 @@
 
 {% block body %}
 {% for newspost in newsposts %}
-	<h2>{{ newspost.title }}</h2>
+	<h1>{{ newspost.title }}</h1>
 	<br/>
 	{{ newspost.content }}
 	<br/>

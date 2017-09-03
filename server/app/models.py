@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Slide(models.Model):
 
 	position = models.IntegerField()
@@ -65,7 +64,6 @@ class Event(models.Model):
 class Album(models.Model):
 	def __str__(self):
 		return 'Album: ' + self.name
-		
 	name = models.CharField(max_length=128, default='Album')
 	description = models.TextField(blank=True, null=True)
 	category = models.IntegerField()

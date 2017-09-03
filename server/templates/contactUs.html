@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_templates/base.html" %}
 
 {% block content %}
 <div class="container">
@@ -7,8 +7,8 @@
 			<div class="row section">
 				<div class="col-lg-1"></div>
 				<div class="col-lg-10">
-					<div class="row">
-						<h2>Contact Us</h2>
+					<div class="row section">
+						<h2 class="page-title">Contact Us</h2>
 						<p>Questions about the organization? Interested in becoming a partner? Send us a message. Unless we are busy, we will likely get back to you within the day.</p>
 						<p>Alternatively, you can contact us at <b>(512) 412-2580</b>.</p>
 						<form action="{% url 'contact_us' %}" method="post">

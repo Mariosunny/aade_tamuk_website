@@ -16,11 +16,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-weight: 700;
-	font-size: 40px;
-}
-
-h2 {
 	text-align: center;
 	font-size: 60px;
 }
@@ -39,12 +34,14 @@ h4 {
 	font-weight: bold;
 	text-align: center;
 }
+
 ul {
 	font-size: 15px;
 }
 
 p {
 	font-size: 18px;
+	padding-bottom: 15px;
 }
 
 a {
@@ -83,10 +80,10 @@ img .post-image {
 	max-width: 600px;
 	height: 400px;
 }
+
 iframe {
 	margin-left: 100px;
 }
-
 
 .side-content {
 		position: fixed;
@@ -94,6 +91,7 @@ iframe {
 
 .page-title {
 	margin-bottom: 20px;
+	text-align: center;
 }
 
 .news {
@@ -140,6 +138,7 @@ hr {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
+
 img .post-image {
 	max-width: 600px;
 	height: 400px;
@@ -149,7 +148,7 @@ img .post-image {
 		padding-top: 10px;
 }
 
-.left-h2 {
+.left-h1 {
 	text-align: left;
 	padding-left: 15px;
 	padding-bottom: 10px;
@@ -195,6 +194,8 @@ img .post-image {
  .sponsors {
 	 padding-top: 50px;
  }
+
+
 
  @media (min-width: 979px) {
                ul.nav li.dropdown:hover > ul.dropdown-menu {
