@@ -17,8 +17,12 @@
 .navbar-default .navbar-nav > li > a {
   font-size: 18px;
   font-family: 'Lato', sans-serif;
-  color: #d3121c;
 	background-color: white;
+  color: #222;
+  transition: ease 0.4s;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #dd0000;
 }
 
 .navbar-default .navbar-brand {
@@ -30,12 +34,6 @@
 }
 .navbar-default .navbar-text {
   color: #f9feff;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: white;
-	background-color: #d3121c;
 }
 
 .navbar-default .navbar-nav > li > .dropdown-menu {
@@ -117,7 +115,7 @@
   left: 0;
   top: 0;
   margin: auto;
-  padding: 0
+  padding: 0;
 }
 
 .navbar-left {

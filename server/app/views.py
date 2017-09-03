@@ -40,6 +40,7 @@ class Home(WebsiteView):
                 "title": newspost.title,
                 "date": newspost.date,
                 "content": newspost.content[:500] + "..." if len(newspost.content) > 500 else newspost.content,
+                "img": newspost.image.url if newspost.image else None,
                 "read_more": len(newspost.content) > 500,
                 "pk": newspost.pk,
             } for newspost in newsposts]
@@ -239,6 +240,7 @@ class News(WebsiteView):
                 "date": newspost.date,
                 "content": newspost.content,
                 "pk": newspost.pk,
+                "img": newspost.image.url if newspost.image else None,
                 "selected": self.kwargs['selected'] if 'selected' in self.kwargs else -1
             } for newspost in newsposts]
         })

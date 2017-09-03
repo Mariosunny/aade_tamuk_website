@@ -11,6 +11,7 @@
               <h2 id="selected" data-selected="{{selected}}">News</h2>
               {% for newspost in newsposts %}
                 <div class="news" name="{{newspost.pk}}">
+                  {% if newspost.img %}<img class="news-image" src="{{newspost.img}}"/>{% endif %}
                   <div class="news-title">{{newspost.title}}</div>
                   <div class="news-date">{{newspost.date|date:"M d Y"}}</div>
                   <div class="news-content">{{newspost.content|linebreaks}}</div>

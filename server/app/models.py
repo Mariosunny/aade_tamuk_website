@@ -19,6 +19,7 @@ class NewsPost(models.Model):
 	title = models.CharField(max_length=128)
 	content = models.TextField(blank=True, null=True)
 	date = models.DateTimeField(auto_now_add=True)
+	image = models.ImageField(blank=True, upload_to='uploads/')
 
 	def __str__(self):
 
@@ -66,12 +67,20 @@ class Album(models.Model):
 		return 'Album: ' + self.name
 		
 	name = models.CharField(max_length=128, default='Album')
-	description = models.TextField()
+	description = models.TextField(blank=True, null=True)
 	category = models.IntegerField()
+
+	def __str__(self):
+
+		return self.name
 
 
 class Picture(models.Model):
 
 	album = models.ForeignKey("Album")
 	image = models.ImageField(upload_to='uploads/')
-	caption = models.TextField()
+	caption = models.TextField(blank=True, null=True)
+
+	def __str__(self):
+
+		return self.caption

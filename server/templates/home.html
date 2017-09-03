@@ -33,13 +33,11 @@
   	<div class="row">
 	    <div class="container">
         <div class="row section">
-				  <div class="col-lg-3">
-            <a class="twitter-timeline" data-width="250" data-link-color="#E81C4F" href="https://twitter.com/aadetamuk">Tweets by aadetamuk</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-          <div class="col-lg-7">
+          <div class="col-lg-8">
             <div class="row section">
               {% for newspost in newsposts %}
               	<div class="news">
+                  {% if newspost.img %}<img class="news-image" src="{{newspost.img}}"/>{% endif %}
 	              	<div class="news-title"><a href="{% url 'newspost' newspost.pk %}">{{newspost.title}}</a></div>
 	              	<div class="news-date">{{newspost.date|date:"M d Y"}}</div>
 	              	<div class="news-content">{{newspost.content|linebreaks}}</div>
@@ -48,9 +46,10 @@
               {% endfor %}
             </div>
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-3">
             <div id="calendar">
-              <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=200&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=negk19uohc7g8s6a5volpqiao0%40group.calendar.google.com&amp;color=%23853104&amp;ctz=America%2FWinnipeg" style="border-width:0" width="200" height="200" frameborder="0" scrolling="no"></iframe>
+              <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTz=0&amp;height=200&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=negk19uohc7g8s6a5volpqiao0%40group.calendar.google.com&amp;color=%23853104&amp;ctz=America%2FWinnipeg" style="border-width:0" width="275" height="275" frameborder="0" scrolling="no"></iframe>
+              <a class="twitter-timeline" data-width="300" data-link-color="#E81C4F" style="margin-top:20px;" href="https://twitter.com/aadetamuk">Tweets by aadetamuk</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div id="upcoming-events">
             </div>
